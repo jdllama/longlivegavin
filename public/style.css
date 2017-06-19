@@ -12,8 +12,12 @@
     -webkit-animation: fadein 5s; /* Safari and Chrome */
     -o-animation: fadein 5s; /* Opera */
 	animation-fill-mode:forwards;
+}
+
+.evilreturns a, .evilreturns a:visited {
 	font-size: 3.0em;
 	color: red;
+	text-decoration: underline;
 }
 
 @keyframes turnRed {
