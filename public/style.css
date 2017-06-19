@@ -25,10 +25,10 @@
         background-color: #e6ecf0;
 		color: #000000;
     }
-	50% {
-		background-color: black;
+	25% {
+        background-color: #e6ecf0;
 		color: #000000;
-	}
+    }
     100% {
         background-color: black;
 		color: red;
