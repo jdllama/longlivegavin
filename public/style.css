@@ -21,11 +21,14 @@
 }
 
 @keyframes turnRed {
-    from {
+    0% {
         background-color: #e6ecf0;
 		color: #000000;
     }
-    to {
+	50% {
+		background-color: black;
+	}
+    100% {
         background-color: black;
 		color: red;
     }
