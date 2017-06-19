@@ -27,12 +27,20 @@ app.get('/HSIM7', function(request, response) {
   response.render('pages/stage2');
 });
 
-app.get('/HSIM7/PMOSH', function(request, response) {
+app.get('/PMOSH', function(request, response) {
   response.render('pages/stage3');
 });
 
-app.get('/HSIM7/PMOSH/BEGINS', function(request, response) {
+app.get("/BEGINS", function(request, response) {
   response.render('pages/stage4');
+}); 
+
+app.get('/HSIM7/PMOSH', function(request, response) {
+  response.redirect('/PMOSH');
+});
+
+app.get('/HSIM7/PMOSH/BEGINS', function(request, response) {
+  response.redirect('/BEGINS');
 });
 
 app.get("/JDtest", function(request, response) {
