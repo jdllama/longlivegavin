@@ -10,11 +10,11 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index2');
+  response.render('pages/stage1');
 });
 
 app.get('/HSIM7', function(request, response) {
-  response.render('pages/HSIM7');
+  response.render('pages/stage2');
 });
 
 app.listen(app.get('port'), function() {
