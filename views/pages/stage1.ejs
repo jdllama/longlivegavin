@@ -6,9 +6,14 @@
 <style type="text/css">
 body {
 	background-color: #e6ecf0;
-}
-body,td,th {
 	color: #000000;
+}
+
+.evilbody {
+	animation: turnRed 2s;
+    -moz-animation: turnRed 2s; /* Firefox */
+    -webkit-animation: turnRed 2s; /* Safari and Chrome */
+    -o-animation: turnRed 2s; /* Opera */
 }
 
 .evil {
@@ -16,6 +21,17 @@ body,td,th {
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes turnRed {
+    from {
+        background-color: #e6ecf0;
+		color: #000000;
+    }
+    to {
+        background-color: black;
+		color: red;
+    }
 }
 
 @keyframes fadein {
@@ -28,7 +44,7 @@ body,td,th {
 }
 </style>
 </head>
-<body>
+<body class="evilbody">
 Hey guys! Guess who ended up lost on his way to a gas station? LOL<br />
 <br />
 So it turns out that that Gary guy was TOTALLY crazy, I think? It’s hard for me to remember. I remember getting something literally stuck in my head, then I remember getting married, and now I’m HTML? What gives? LOL<br />
