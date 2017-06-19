@@ -33,10 +33,14 @@ app.get('/PMOSH', function(request, response) {
 
 app.get("/BEGINS", function(request, response) {
   response.render('pages/stage4');
-}); 
+});
 
 app.get('/HSIM7/PMOSH', function(request, response) {
   response.redirect('/PMOSH');
+});
+
+app.get('/PMOSH/BEGINS', function(request, response) {
+  response.redirect('/BEGINS');
 });
 
 app.get('/HSIM7/PMOSH/BEGINS', function(request, response) {
