@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-/*
+
 app.use(function(req, res, next) {
   for (var key in req.query)
   { 
@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
   }
   next();
 });
-*/
+
 
 app.get('/', function(request, response) {
   response.render('pages/stage1');
