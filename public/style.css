@@ -6,6 +6,10 @@
 	animation-fill-mode:forwards;
 }
 
+.evilbody a, .evilbody a:visited {
+	color: black;
+}
+
 .evilreturns {
     animation: fadein 5s;
     -moz-animation: fadein 5s; /* Firefox */
