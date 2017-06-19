@@ -1,8 +1,3 @@
-body {
-	background-color: black;
-	color: red;
-}
-
 .evilbody {
 	animation: turnRed 15s;
     -moz-animation: turnRed 15s; /* Firefox */

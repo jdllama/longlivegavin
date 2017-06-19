@@ -21,6 +21,10 @@ app.get('/HSIM7/PMOSH', function(request, response) {
   response.render('pages/stage3');
 });
 
+app.get("/JDtest", function(request, response) {
+  response.render('pages/finalstage');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
