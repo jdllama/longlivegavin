@@ -9,6 +9,14 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+  for (var key in req.query)
+  { 
+    req.query[key.toLowerCase()] = req.query[key];
+  }
+  next();
+});
+
 app.get('/', function(request, response) {
   response.render('pages/stage1');
 });
