@@ -29,6 +29,10 @@ app.get('/HSIM7/PMOSH', function(request, response) {
   response.render('pages/stage3');
 });
 
+app.get('/HSIM7/PMOSH/BEGINS', function(request, response) {
+  response.render('pages/stage4');
+});
+
 app.get("/JDtest", function(request, response) {
   response.render('pages/finalstage');
 });
