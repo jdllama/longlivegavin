@@ -1,0 +1,38 @@
+body {
+	background-color: black;
+	color: red;
+}
+
+.evilbody {
+	animation: turnRed 15s;
+    -moz-animation: turnRed 15s; /* Firefox */
+    -webkit-animation: turnRed 15s; /* Safari and Chrome */
+    -o-animation: turnRed 15s; /* Opera */
+}
+
+.evilreturns {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes turnRed {
+    from {
+        background-color: #e6ecf0;
+		color: #000000;
+    }
+    to {
+        background-color: black;
+		color: red;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
