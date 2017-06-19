@@ -16,8 +16,7 @@
 
 .evilreturns a, .evilreturns a:visited {
 	font-size: 6.66em;
-	color: red;
-	text-decoration: underline;
+	color: #8b0000;
 }
 
 @keyframes turnRed {
