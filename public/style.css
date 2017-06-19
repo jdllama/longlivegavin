@@ -1,8 +1,8 @@
 .evilbody {
-	animation: turnRed 15s;
-    -moz-animation: turnRed 15s; /* Firefox */
-    -webkit-animation: turnRed 15s; /* Safari and Chrome */
-    -o-animation: turnRed 15s; /* Opera */
+	animation: turnRed 20s;
+    -moz-animation: turnRed 20s; /* Firefox */
+    -webkit-animation: turnRed 20s; /* Safari and Chrome */
+    -o-animation: turnRed 20s; /* Opera */
 	animation-fill-mode:forwards;
 }
 
@@ -13,6 +13,7 @@
     -o-animation: fadein 5s; /* Opera */
 	animation-fill-mode:forwards;
 	font-size: 3.0em;
+	color: red;
 }
 
 @keyframes turnRed {
