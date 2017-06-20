@@ -51,7 +51,8 @@ app.get("/JDtest", function(request, response) {
   response.render('pages/finalstage');
 });
 
-app.get("*", function(req, res) {
+//app.get("*", function(req, res) {
+app.get("/fakepage", function(req, res) {
   var gavinFacts = [
     "The Jeffcoat name came from Sir Gweyneldor Useyourskinascoat, who used his first opponent, Jeff, as a skin. Rumor has it it was very loose and fluffy.",
     "Gavin once calculated the likelihood of a couch being haunted simply off the top of his head!...The likelihood was zero.",
