@@ -108,7 +108,7 @@ app.post(finalURL, function(req, res) {
   else if(idea === "CAN'T GET ENOUGH OF YOU BABY") {
     script = "$('#response').html(\"You're god damned kidding me.\")";
   }
-  res.json({script:correctScript, idea: idea});
+  res.json({script:script, idea: idea});
 });
 
 //app.get("*", function(req, res) {
