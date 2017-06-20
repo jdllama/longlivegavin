@@ -18,8 +18,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get("/", function(req, res) {
+  res.status(404).send("AY YO WE AIN'T READY YET BRO");
+});
 
-app.get('/', function(request, response) {
+app.get('/stage1', function(request, response) {
   var black = function(num) {
     return "<span style='color: black;'>" + num + "</span>";
   }
@@ -33,14 +36,23 @@ app.get('/', function(request, response) {
     return "<span style='color: white;'>" + num + "</span>";
   }
   var blinkyParts = [
-    black(3) + red(4) + black(3),
-
+    [black(3),red(4),black(3)],
+    [black(2),red(6),black(2)],
+    [black(1),red(1),white(2),red(2),white(2),red(1),black(1)],
+    [black(1),blue(2),white(1),red(2),blue(2),white(1),red(1)],
+    [red(1),blue(2),white(1),red(2),blue(2),white(1),red(1)],
+    [red(2),white(1),red(4),white(1),red(2)],
+    [red(10)],
+    [red(10)],
+    [red(1),black(1),red(2),black(2),red(2),black(1),red(1)],
+    [red(1),black(2),red(1),black(2),red(1),black(2),red(1)]
   ];
-  var item = blinkyParts[Math.floor(Math.random()*blinkyParts.length)];
-  response.render('pages/stage1', {ghostPiece: item, ghostLength: blinkyParts.length, ghostIndex: blinkyParts.indexOf(item) + 1});
+  var index = Math.floor(Math.random()*blinkyParts.length);
+  var item = blinkyParts[index];
+  response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: blinkyParts.length, ghostIndex: index + 1});
 });
 
-app.get('/HSIMG', function(request, response) {
+app.get('/BLINKY', function(request, response) {
   response.render('pages/stage2');
 });
 
@@ -52,7 +64,7 @@ app.get("/BEGINS", function(request, response) {
   response.render('pages/stage4');
 });
 
-app.get('/HSIMG/DONGLE', function(request, response) {
+app.get('/BLINKY/DONGLE', function(request, response) {
   response.redirect('/DONGLE');
 });
 
@@ -60,7 +72,7 @@ app.get('/DONGLE/BEGINS', function(request, response) {
   response.redirect('/BEGINS');
 });
 
-app.get('/HSIMG/PMOSH.rar', function(request, response) {
+app.get('/BLINKY/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
