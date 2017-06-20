@@ -52,7 +52,12 @@ app.get("/JDtest", function(request, response) {
 });
 
 app.get("*", function(req, res) {
-  var gavinFacts = ["Butts are cool"];
+  var gavinFacts = [
+    "The Jeffcoat name came from Sir Gweyneldor Useyourskinascoat, who used his first opponent, Jeff, as a skin. Rumor has it it was very loose and fluffy.",
+    "Gavin once calculated the likelihood of a couch being haunted simply off the top of his head!...The likelihood was zero.",
+    "Gavin uses the phrase 'LOL' like most people use oxygen. That's not hyperbole, he literally breathes acronyms. Please stand five feet away when he ROTFL.",
+    "Could Gavin draw a penis so big that it WOULDN'T make him laugh? Yes. The last time he did, it came to life and attached to his pelvis.",
+  ];
   res.status(404);
   var item = gavinFacts[Math.floor(Math.random()*gavinFacts.length)];
   res.render("pages/404", {fact: item});
