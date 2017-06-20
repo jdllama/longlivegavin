@@ -71,7 +71,7 @@ app.get("/BEGINS", function(request, response) {
 
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
-  return response.send("This is the last page. I'm keeping the ending a secret for now, though.");
+  //return response.send("This is the last page. I'm keeping the ending a secret for now, though.");
   response.render('pages/finalstage');
 });
 
