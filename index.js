@@ -58,6 +58,11 @@ app.get("/fakepage", function(req, res) {
     "Gavin once calculated the likelihood of a couch being haunted simply off the top of his head!...The likelihood was zero.",
     "Gavin uses the phrase 'LOL' like most people use oxygen. That's not hyperbole, he literally breathes acronyms. Please stand five feet away when he ROTFL.",
     "Could Gavin draw a penis so big that it WOULDN'T make him laugh? Yes. The last time he did, it came to life and attached to his pelvis.",
+    "'Gavin' is Latin for 'hot dog'!",
+    "One of the Gavins is an excellent lawyer! He got a \"Public Lewdness with an Unlicensed Badger\" charge reduced to \"Public Fursona But It's Totally Cool You Guys\".",
+    "A multitude of Gavins owned hammer factories!....Wait, I don't.........awwww.",
+    "There was no headway made in the Jeffcoat Murder Case, although A Woke AF Skull had no alibi.",
+    
   ];
   res.status(404);
   var item = gavinFacts[Math.floor(Math.random()*gavinFacts.length)];
