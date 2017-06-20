@@ -65,26 +65,11 @@ app.get('/DONGLE', function(request, response) {
 });
 
 app.get("/BEGINS", function(request, response) {
-  response.render('pages/stage4');
-});
-
-app.get('/BLINKY/DONGLE', function(request, response) {
-  response.redirect('/DONGLE');
-});
-
-app.get('/DONGLE/BEGINS', function(request, response) {
-  response.redirect('/BEGINS');
-});
-
-app.get('/BLINKY/PMOSH.rar', function(request, response) {
-  response.redirect('/PMOSH.rar');
-});
-
-app.get("/JDfartsalot", function(request, response) {
+  //response.render('pages/stage4');
   response.render('pages/sadstory');
 });
 
-var finalURL = "/JDtest";
+var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
   response.render('pages/finalstage');
 });
@@ -99,17 +84,42 @@ app.post(finalURL, function(req, res) {
     "No, not quite, doesn't let me link in",
     "Hmmm. Have you tried smashing your mouth across the keyboard? It sounds like fun LOL",
     "Nope, try again! I believe in you, just like you believed in me!",
-    "Sorry, no, but it's OK, you got this LOL"
+    "Sorry, no, but it's OK, you got this LOL",
+    "No!"
   ];
   var script = "$('#response').html(\"" + potentialMessages[Math.floor(Math.random()*potentialMessages.length)] + "\")";
   if(idea === "ALLSTAR" || idea === "ALL STAR" || idea === "ALL-STAR" || idea === "ALL*STAR") {
     script = correctScript;
   }
   else if(idea === "CAN'T GET ENOUGH OF YOU BABY") {
-    script = "$('#response').html(\"You're god damned kidding me.\")";
+    script = "$('#response').html(\"You've got enough of this baby!...Er, wait. No.\")";
+  }
+  else if(idea === "WALKIN' ON THE SUN" || idea === "WALKING ON THE SUN" || idea === "WALKIN ON THE SUN") {
+    script = "$('#response').html(\"WHO THE HELL LEFT THE SUN ON OVERNIGHT, JESUS CHRIST OW. My feetsies.\")";
   }
   res.json({script:script, idea: idea});
 });
+
+app.get('/BLINKY/DONGLE', function(request, response) {
+  response.redirect('/DONGLE');
+});
+
+app.get('/DONGLE/BEGINS', function(request, response) {
+  response.redirect('/BEGINS');
+});
+
+app.get('/BEGINS/FREEGAVIN', function(request, response) {
+  response.redirect('/FREEGAVIN');
+});
+
+app.get('/BLINKY/PMOSH.rar', function(request, response) {
+  response.redirect('/PMOSH.rar');
+});
+
+/*
+app.get("/JDfartsalot", function(request, response) {
+  response.render('pages/sadstory');
+});*/
 
 //app.get("*", function(req, res) {
 app.get("/fakepage", function(req, res) {
