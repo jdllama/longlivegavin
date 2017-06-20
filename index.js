@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -8,6 +9,9 @@ app.use(express.static(__dirname + '/public'));
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 
 
 app.use(function(req, res, next) {
@@ -80,8 +84,15 @@ app.get("/JDfartsalot", function(request, response) {
   response.render('pages/sadstory');
 });
 
-app.get("/JDtest", function(request, response) {
+var finalURL = "/JDtest";
+app.get(finalURL, function(request, response) {
   response.render('pages/finalstage');
+});
+
+app.post(finalURL, function(req, res) {
+  var obj = req.idea;
+  var correctScript = "$('#button, #idea').attr('disabled', true);$('body').addClass('evilbody');$('#response').html(\"Thank you so much for all of your help! I wish I could pay you back somehow, but whenever you hear my idea, think of me! I hope you think I'm cool forever LOL\");setTimeout(function() {$('body').append(\"<br /><div class='evilreturns'><a href='fake'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);";
+  res.json({script:correctScript, idea: obj});
 });
 
 //app.get("*", function(req, res) {
