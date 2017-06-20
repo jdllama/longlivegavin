@@ -102,7 +102,7 @@ app.post(finalURL, function(req, res) {
     "Sorry, no, but it's OK, you got this LOL"
   ];
   var script = "$('#response').html(\"" + potentialMessages[Math.floor(Math.random()*potentialMessages.length)] + "\")";
-  if(idea === "ALLSTAR" || idea === "ALL STAR" == idea === "ALL-STAR" || idea === "ALL*STAR") {
+  if(idea === "ALLSTAR" || idea === "ALL STAR" || idea === "ALL-STAR" || idea === "ALL*STAR") {
     script = correctScript;
   }
   else if(idea === "CAN'T GET ENOUGH OF YOU BABY") {
