@@ -27,7 +27,7 @@ app.get('/HSIMG', function(request, response) {
   response.render('pages/stage2');
 });
 
-app.get('/PMOSH', function(request, response) {
+app.get('/DONGLE', function(request, response) {
   response.render('pages/stage3');
 });
 
@@ -35,11 +35,11 @@ app.get("/BEGINS", function(request, response) {
   response.render('pages/stage4');
 });
 
-app.get('/HSIMG/PMOSH', function(request, response) {
-  response.redirect('/PMOSH');
+app.get('/HSIMG/DONGLE', function(request, response) {
+  response.redirect('/DONGLE');
 });
 
-app.get('/PMOSH/BEGINS', function(request, response) {
+app.get('/DONGLE/BEGINS', function(request, response) {
   response.redirect('/BEGINS');
 });
 
