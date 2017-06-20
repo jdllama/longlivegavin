@@ -90,9 +90,9 @@ app.get(finalURL, function(request, response) {
 });
 
 app.post(finalURL, function(req, res) {
-  var obj = req.idea;
+  var idea = req.body.idea;
   var correctScript = "$('#button, #idea').attr('disabled', true);$('body').addClass('evilbody');$('#response').html(\"Thank you so much for all of your help! I wish I could pay you back somehow, but whenever you hear my idea, think of me! I hope you think I'm cool forever LOL\");setTimeout(function() {$('body').append(\"<br /><div class='evilreturns'><a href='fake'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);";
-  res.json({script:correctScript, idea: obj});
+  res.json({script:correctScript, idea: idea});
 });
 
 //app.get("*", function(req, res) {
