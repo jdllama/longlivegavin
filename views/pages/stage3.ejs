@@ -4,6 +4,48 @@
 <meta charset="utf-8">
 <title>These shapes look like letters...</title>
 <% include ../partials/style.ejs %>
+<style>
+    span {
+    margin: 20px;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+</style>
 </head>
 <body>
 <a href="https://docs.google.com/spreadsheets/d/1SxsWFUmH6uf1Qw83O3I6b_iqwqqZ2TsOhypIiDEYdrw/edit?usp=sharing" target="_blank"><img src="crossword.png" /></a>
@@ -13,7 +55,7 @@ It's been interesting looking at other universes! All these different personalit
 <br />
 But look what I found what I made in another dimension!? I mean, heck, I was an expert crossword solver!<br />
 <br />
-One of them, I had MAJOR OCD (More like CDO LOL). Another one, I was nineteen time state champion plate spinner!<br />
+One of them, I had MAJOR OCD (More like CDO LOL). Another one, I was nineteen time state champion plate spinner! <span>WHEE</span><br />
 <br />
 I don't mind being able to look, but to be honest, I'm trapped in a void, and I need to get myself away from this place, and I don't know how to start.
 <!-- Aegilops -->
