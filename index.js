@@ -43,6 +43,10 @@ app.get('/DONGLE/BEGINS', function(request, response) {
   response.redirect('/BEGINS');
 });
 
+app.get('/HSIMG/PMOSH.rar', function(request, response) {
+  response.redirect('/PMOSH.rar');
+});
+
 app.get("/JDtest", function(request, response) {
   response.render('pages/finalstage');
 });
