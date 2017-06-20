@@ -91,7 +91,23 @@ app.get(finalURL, function(request, response) {
 
 app.post(finalURL, function(req, res) {
   var idea = req.body.idea;
-  var correctScript = "$('#button, #idea').attr('disabled', true);$('body').addClass('evilbody');$('#response').html(\"Thank you so much for all of your help! I wish I could pay you back somehow, but whenever you hear my idea, think of me! I hope you think I'm cool forever LOL\");setTimeout(function() {$('body').append(\"<br /><div class='evilreturns'><a href='fake'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);";
+  if(!idea) idea = "";
+  idea = idea.toUpperCase().trim();
+  var goodbyeMessage = "YES! It worked! I can feel my essence changing into a song idea now. Now, every time you hear this song, I will live on even for the briefest of moments! I don't know if we will meet again, but if so, I will miss you. See you around LOL";
+  var correctScript = "$('#button, #idea').attr('disabled', true);$('body').addClass('evilbody');$('#response').html(\"" + goodbyeMessage + "\");setTimeout(function() {$('body').append(\"<br /><div class='evilreturns'><a href='fake'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);";
+  var potentialMessages = [
+    "No, not quite, doesn't let me link in",
+    "Hmmm. Have you tried smashing your mouth across the keyboard? It sounds like fun LOL",
+    "Nope, try again! I believe in you, just like you believed in me!",
+    "Sorry, no, but it's OK, you got this LOL"
+  ];
+  var script = "$('#response').html(\"" + potentialMessages[Math.floor(Math.random()*potentialMessages.length)] + "\")";
+  if(idea === "ALLSTAR" || idea === "ALL STAR" == idea === "ALL-STAR" || idea === "ALL*STAR") {
+    script = correctScript;
+  }
+  else if(idea === "CAN'T GET ENOUGH OF YOU BABY") {
+    script = "$('#response').html(\"You're god damned kidding me.\")";
+  }
   res.json({script:correctScript, idea: idea});
 });
 
