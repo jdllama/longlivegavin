@@ -47,7 +47,7 @@ app.get('/HSIMG/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
-app.get("/JDtest", function(request, response) {
+app.get("/JDfartsalot", function(request, response) {
   response.render('pages/sadstory');
 });
 
