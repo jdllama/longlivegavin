@@ -52,7 +52,11 @@ app.get("/JDtest", function(request, response) {
 });
 
 app.get("*", function(req, res) {
-  res.send("NOPE", 404);
+  var gavinFacts = ["Butts are cool"];
+  //res.send("NOPE", 404);
+  res.status(404);
+  var item = gavinFacts[Math.floor(Math.random()*gavinFacts.length)];
+  res.render("pages/404", {fact: item});
 });
 
 app.listen(app.get('port'), function() {
