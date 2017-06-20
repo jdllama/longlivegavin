@@ -51,6 +51,10 @@ app.get("/JDtest", function(request, response) {
   response.render('pages/finalstage');
 });
 
+app.get("*", function(req, res) {
+  res.send("NOPE", 404);
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
