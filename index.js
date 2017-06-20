@@ -23,7 +23,7 @@ app.get('/', function(request, response) {
   response.render('pages/stage1');
 });
 
-app.get('/HSIM7', function(request, response) {
+app.get('/HSIMG', function(request, response) {
   response.render('pages/stage2');
 });
 
@@ -35,15 +35,11 @@ app.get("/BEGINS", function(request, response) {
   response.render('pages/stage4');
 });
 
-app.get('/HSIM7/PMOSH', function(request, response) {
+app.get('/HSIMG/PMOSH', function(request, response) {
   response.redirect('/PMOSH');
 });
 
 app.get('/PMOSH/BEGINS', function(request, response) {
-  response.redirect('/BEGINS');
-});
-
-app.get('/HSIM7/PMOSH/BEGINS', function(request, response) {
   response.redirect('/BEGINS');
 });
 
