@@ -20,7 +20,24 @@ app.use(function(req, res, next) {
 
 
 app.get('/', function(request, response) {
-  response.render('pages/stage1');
+  var black = function(num) {
+    return "<span style='color: black;'>" + num + "</span>";
+  }
+  var red = function(num) {
+    return "<span style='color: red;'>" + num + "</span>";
+  }
+  var blue = function(num) {
+    return "<span style='color: blue;'>" + num + "</span>";
+  }
+  var white = function(num) {
+    return "<span style='color: white;'>" + num + "</span>";
+  }
+  var blinkyParts = [
+    black(3) + red(4) + black(3),
+
+  ];
+  var item = blinkyParts[Math.floor(Math.random()*blinkyParts.length)];
+  response.render('pages/stage1', {ghostPiece: item, ghostLength: blinkyParts.length, ghostIndex: blinkyParts.indexOf(item) + 1});
 });
 
 app.get('/HSIMG', function(request, response) {
