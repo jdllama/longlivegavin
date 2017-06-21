@@ -69,6 +69,10 @@ app.get("/BEGINS", function(request, response) {
   response.render('pages/sadstory');
 });
 
+app.get("/THANKYOUDANGER", function(request, response) {
+  response.render('pages/danger');
+});
+
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
   return response.send("This is the last page. I'm keeping the ending a secret for now, though.");
