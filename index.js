@@ -31,7 +31,7 @@ app.get('/stage1', function(request, response) {
     return "<span style='color: black;'>" + num + "</span>";
   }
   var red = function(num) {
-    return "<span style='color: red;'>" + num + "</span>";
+    return "<span style='color: pink;'>" + num + "</span>";
   }
   var blue = function(num) {
     return "<span style='color: blue;'>" + num + "</span>";
@@ -52,7 +52,7 @@ app.get('/stage1', function(request, response) {
     [red(1),black(2),red(1),black(2),red(1),black(2),red(1)]
   ];
   var index = Math.floor(Math.random()*blinkyParts.length);
-  var item = blinkyParts[index];
+  var item = blinkyParts[index].reverse();
   response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: blinkyParts.length, ghostIndex: index + 1});
 });
 
