@@ -6,7 +6,7 @@
 	animation-fill-mode:forwards;
 }
 
-.return {
+.returns {
     animation: fadein 4s;
     -moz-animation: fadein 4s; /* Firefox */
     -webkit-animation: fadein 4s; /* Safari and Chrome */
@@ -14,7 +14,7 @@
 	animation-fill-mode:forwards;
 }
 
-.return a, .return a:visited {
+.returns a, .returns a:visited {
 	font-size: 6.66em;
 	color: #660000;
 }
