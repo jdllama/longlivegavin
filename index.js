@@ -66,7 +66,27 @@ app.get('/DONGLE', function(request, response) {
 
 app.get("/BEGINS", function(request, response) {
   //response.render('pages/stage4');
-  response.render('pages/sadstory');
+  //response.render('pages/sadstory');
+  var names = [
+    "mika",
+    "DannyMethane",
+    "JDllama",
+    "BigEZ",
+    "bakudai",
+    "Karr",
+    "Feffers",
+    "A Little Voice",
+    "jb",
+    "buttfriend",
+    "Nesses",
+    "joshy216",
+    "GruesomeOne",
+    "Marn",
+    "Timescape"
+  ];
+  
+  var name = names[Math.floor(Math.random()*names.length)];
+  response.render("pages/sadstory", {name: name});
 });
 
 app.get("/THANKYOUDANGER", function(request, response) {
