@@ -93,7 +93,7 @@ app.get("/THANKYOUDANGER", function(request, response) {
 
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
-   response.send("This is the last page. I'm keeping the ending a secret for now, though.");
+  //response.send("This is the last page. I'm keeping the ending a secret for now, though.");
   response.render('pages/finalstage');
 });
 
