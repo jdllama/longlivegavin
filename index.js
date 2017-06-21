@@ -75,7 +75,7 @@ app.get("/THANKYOUDANGER", function(request, response) {
 
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
-  return response.send("This is the last page. I'm keeping the ending a secret for now, though.");
+  //return response.send("This is the last page. I'm keeping the ending a secret for now, though.");
   response.render('pages/finalstage');
 });
 
@@ -84,7 +84,7 @@ app.post(finalURL, function(req, res) {
   if(!idea) idea = "";
   idea = idea.toUpperCase().trim();
   var goodbyeMessage = "YES! It worked! I can feel my essence changing into a song idea now. Now, every time you hear Smash Mouth - All Star, I will live on even for the briefest of moments! I don't know if we will meet again, but if so, I will miss you. See you around LOL";
-  var correctScript = "$('#button, #idea').remove();$('body').append(\"<audio autoplay='1'><source src='1.mp3'></audio>\");setTimeout(function() {$('body').addClass('evilbody');$('#response').html(\"" + goodbyeMessage + "\");setTimeout(function() {$('body').append(\"<br /><div class='evilreturns'><a href='fake'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);}, 2000);";
+  var correctScript = "$('#button, #idea').remove();$('body').append(\"<audio autoplay='1'><source src='1.mp3'></audio>\");setTimeout(function() {$('body').addClass('body');$('#response').html(\"" + goodbyeMessage + "\");setTimeout(function() {$('body').append(\"<br /><div class='returns'><a href='ThankYouDanger' title='See you around, amigo' alt='See you around, amigo'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);}, 2000);";
   var potentialMessages = [
     "No, not quite, doesn't let me link in",
     "Hmmm. Have you tried smashing your mouth across the keyboard? It sounds like fun LOL",

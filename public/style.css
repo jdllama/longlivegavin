@@ -1,4 +1,4 @@
-.evilbody {
+.body {
 	animation: turnRed 20s;
     -moz-animation: turnRed 20s; /* Firefox */
     -webkit-animation: turnRed 20s; /* Safari and Chrome */
@@ -6,7 +6,7 @@
 	animation-fill-mode:forwards;
 }
 
-.evilreturns {
+.return {
     animation: fadein 4s;
     -moz-animation: fadein 4s; /* Firefox */
     -webkit-animation: fadein 4s; /* Safari and Chrome */
@@ -14,7 +14,7 @@
 	animation-fill-mode:forwards;
 }
 
-.evilreturns a, .evilreturns a:visited {
+.return a, .return a:visited {
 	font-size: 6.66em;
 	color: #660000;
 }
