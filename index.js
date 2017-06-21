@@ -31,7 +31,7 @@ app.get('/stage1', function(request, response) {
     return "<span style='color: black;'>" + num + "</span>";
   }
   var red = function(num) {
-    return "<span style='color: pink;'>" + num + "</span>";
+    return "<span style='color: #ff0dbf;'>" + num + "</span>";
   }
   var blue = function(num) {
     return "<span style='color: blue;'>" + num + "</span>";
