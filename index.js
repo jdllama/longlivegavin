@@ -30,7 +30,7 @@ app.get('/stage1', function(request, response) {
   var black = function(num) {
     return "<span style='color: black;'>" + num + "</span>";
   }
-  var red = function(num) {
+  var pink = function(num) {
     return "<span style='color: #ff0dbf;'>" + num + "</span>";
   }
   var blue = function(num) {
@@ -39,24 +39,24 @@ app.get('/stage1', function(request, response) {
   var white = function(num) {
     return "<span style='color: white;'>" + num + "</span>";
   }
-  var blinkyParts = [
-    [black(3),red(4),black(3)],
-    [black(2),red(6),black(2)],
-    [black(1),red(1),white(2),red(2),white(2),red(1),black(1)],
-    [black(1),blue(2),white(1),red(2),blue(2),white(1),red(1)],
-    [red(1),blue(2),white(1),red(2),blue(2),white(1),red(1)],
-    [red(2),white(1),red(4),white(1),red(2)],
-    [red(10)],
-    [red(10)],
-    [red(1),black(1),red(2),black(2),red(2),black(1),red(1)],
-    [red(1),black(2),red(1),black(2),red(1),black(2),red(1)]
+  var pinkyParts = [
+    [black(3),pink(4),black(3)],
+    [black(2),pink(6),black(2)],
+    [black(1),pink(1),white(2),pink(2),white(2),pink(1),black(1)],
+    [black(1),blue(2),white(1),pink(2),blue(2),white(1),pink(1)],
+    [pink(1),blue(2),white(1),pink(2),blue(2),white(1),pink(1)],
+    [pink(2),white(1),pink(4),white(1),pink(2)],
+    [pink(10)],
+    [pink(10)],
+    [pink(1),black(1),pink(2),black(2),pink(2),black(1),pink(1)],
+    [pink(1),black(2),pink(1),black(2),pink(1),black(2),pink(1)]
   ];
-  var index = Math.floor(Math.random()*blinkyParts.length);
-  var item = blinkyParts[index].reverse();
-  response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: blinkyParts.length, ghostIndex: index + 1});
+  var index = Math.floor(Math.random()*pinkyParts.length);
+  var item = pinkyParts[index].reverse();
+  response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: pinkyParts.length, ghostIndex: index + 1});
 });
 
-app.get('/BLINKY', function(request, response) {
+app.get('/PINKY', function(request, response) {
   response.render('pages/stage2');
 });
 
@@ -65,8 +65,6 @@ app.get('/DONGLE', function(request, response) {
 });
 
 app.get("/BEGINS", function(request, response) {
-  //response.render('pages/stage4');
-  //response.render('pages/sadstory');
   var names = [
     "mika",
     "DannyMethane",
@@ -125,7 +123,7 @@ app.post(finalURL, function(req, res) {
   res.json({script:script, idea: idea});
 });
 
-app.get('/BLINKY/DONGLE', function(request, response) {
+app.get('/PINKY/DONGLE', function(request, response) {
   response.redirect('/DONGLE');
 });
 
