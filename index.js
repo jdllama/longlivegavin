@@ -148,7 +148,11 @@ app.get('/ENDS/FREEGAVIN', function(request, response) {
   response.redirect('/FREEGAVIN');
 });
 
-app.get('/BLINKY/PMOSH.rar', function(request, response) {
+app.get('/PINKY/PMOSH.rar', function(request, response) {
+  response.redirect('/PMOSH.rar');
+});
+
+app.get('/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
