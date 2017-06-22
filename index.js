@@ -32,10 +32,10 @@ app.get('/DIRIGIBLE', function(request, response) {
     return "<span style='color: black;'>" + num + "</span>";
   }
   var pink = function(num) {
-    return "<span style='color: #ffb8de;'>" + num + "</span>";
+    return "<span style='color: #ff0dbf;'>" + num + "</span>";
   }
   var blue = function(num) {
-    return "<span style='color: #2022de;'>" + num + "</span>";
+    return "<span style='color: blue;'>" + num + "</span>";
   }
   var white = function(num) {
     return "<span style='color: white;'>" + num + "</span>";
@@ -83,8 +83,8 @@ app.get("/THANKYOUDANGER", function(request, res) {
 
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
-  //response.send("This is the last page. I'm keeping the ending a secret for now, though.");
-  response.render('pages/finalstage');
+  response.send("This is the last page. I'm keeping the ending a secret for now, though.");
+  //response.render('pages/finalstage');
 });
 
 app.post(finalURL, function(req, res) {
