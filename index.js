@@ -167,7 +167,10 @@ app.get("/fakepage", function(req, res) {
     "One of the Gavins is an excellent lawyer! He got a \"Public Lewdness with an Unlicensed Badger\" charge reduced to \"Public Fursona But It's Totally Cool You Guys\".",
     "A multitude of Gavins owned hammer factories!....Wait, I don't.........awwww.",
     "There was no headway made in the Jeffcoat Murder Case, although A Woke AF Skull had no alibi.",
-
+    "Chuck Norris is terrified of Gavin. It's not that Gavin is a bad ass, but more that Gavin doesn't suck and Chuck Norris sucks.",
+    "This one time, at Gavin camp, I stuck an MD5 hash up my pussy.",
+    "Gavin was based on Danger's cousin, who was also named Amy.",
+    "Do NOT look up Gavin the Mongoose. It's...disappointing."
   ];
   res.status(404);
   var item = gavinFacts[Math.floor(Math.random()*gavinFacts.length)];
