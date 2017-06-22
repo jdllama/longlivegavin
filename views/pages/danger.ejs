@@ -6,12 +6,14 @@
 <% include ../partials/style.ejs %>
 </head>
 <body>
-<div>YAY IT'S THE END GOODBYE.</div>
+<div>YAY IT'S THE END GOODBYE.</div><br />
 <div>Nah, for reals, J.D. came up with the idea of a Thank You ARG, reaching out to people and having them say thank you in one way or another.</div>
+<br />
 <% for(var i = 0;i<responses.length;i++) { %>
 <fieldset>
-    <legend><%-responses[i].name;%></legend>
-</fieldset>
+    <legend style="border: 1px solid black"><%-responses[i].name;%></legend>
+    <%-responses[i].html;%>
+</fieldset><br />
 <%}%>
 </body>
 </html>
