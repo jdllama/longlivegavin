@@ -156,11 +156,6 @@ app.get('/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
-/*
-app.get("/JDfartsalot", function(request, response) {
-  response.render('pages/sadstory');
-});*/
-
 //app.get("*", function(req, res) {
 app.get("/fakepage", function(req, res) {
   var gavinFacts = [
