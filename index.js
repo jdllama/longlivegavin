@@ -65,27 +65,12 @@ app.get('/DONGLE', function(request, response) {
   response.render('pages/stage3');
 });
 
+app.get("/ENDS", function(request, response) {
+  response.render("pages/sadstory");
+});
+
 app.get("/BEGINS", function(request, response) {
-  var names = [
-    "mika",
-    "DannyMethane",
-    "JDllama",
-    "BigEZ",
-    "bakudai",
-    "Karr",
-    "Feffers",
-    "A Little Voice",
-    "jb",
-    "buttfriend",
-    "Nesses",
-    "joshy216",
-    "GruesomeOne",
-    "Marn",
-    "Timescape"
-  ];
-  
-  var name = names[Math.floor(Math.random()*names.length)];
-  response.render("pages/sadstory", {name: name});
+  response.render("pages/nostop");
 });
 
 app.get("/THANKYOUDANGER", function(request, res) {
@@ -140,7 +125,7 @@ app.get('/DONGLE/BEGINS', function(request, response) {
   response.redirect('/BEGINS');
 });
 
-app.get('/BEGINS/FREEGAVIN', function(request, response) {
+app.get('/ENDS/FREEGAVIN', function(request, response) {
   response.redirect('/FREEGAVIN');
 });
 
