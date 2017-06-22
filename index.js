@@ -32,10 +32,10 @@ app.get('/DIRIGIBLE', function(request, response) {
     return "<span style='color: black;'>" + num + "</span>";
   }
   var pink = function(num) {
-    return "<span style='color: #ff0dbf;'>" + num + "</span>";
+    return "<span style='color: #ffb8de;'>" + num + "</span>";
   }
   var blue = function(num) {
-    return "<span style='color: blue;'>" + num + "</span>";
+    return "<span style='color: #2022de;'>" + num + "</span>";
   }
   var white = function(num) {
     return "<span style='color: white;'>" + num + "</span>";
