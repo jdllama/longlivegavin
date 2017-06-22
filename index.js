@@ -23,10 +23,11 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", function(req, res) {
-  res.status(404).send("AY YO WE AIN'T READY YET BRO");
+  res.render('pages/stage0');
+  //res.status(404).send("AY YO WE AIN'T READY YET BRO");
 });
 
-app.get('/stage1', function(request, response) {
+app.get('/DIRIGIBLE', function(request, response) {
   var black = function(num) {
     return "<span style='color: black;'>" + num + "</span>";
   }
@@ -125,6 +126,10 @@ app.post(finalURL, function(req, res) {
     script = "$('#response').html(\"WHO THE HELL LEFT THE SUN ON OVERNIGHT, JESUS CHRIST OW. My feetsies.\")";
   }
   res.json({script:script, idea: idea});
+});
+
+app.get('/DIRIGIBLE/PINKY', function(request, response) {
+  response.redirect('/PINKY');
 });
 
 app.get('/PINKY/DONGLE', function(request, response) {
