@@ -23,8 +23,8 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", function(req, res) {
-  //res.render('pages/stage0');
-  res.status(404).send("AY YO WE AIN'T READY YET BRO");
+  res.render('pages/stage0');
+  //res.status(404).send("AY YO WE AIN'T READY YET BRO");
 });
 
 app.get('/DIRIGIBLE', function(request, response) {
