@@ -78,6 +78,25 @@ app.get("/THANKYOUDANGER", function(request, res) {
   responses.push({name: "Comrade", html: `<audio controls><source src="thankyoufiles/comrade.mp3" type="audio/mpeg"></audio>`});
   responses.push({name: "joshy216", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/qrL1FOo5iqE" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Marn", html: `<img src="thankyoufiles/marn.png" />`});
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+  responses = shuffle(responses);
   res.render('pages/danger', {responses: responses});
 });
 
