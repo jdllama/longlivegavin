@@ -87,8 +87,11 @@ app.get("/BEGINS", function(request, response) {
   response.render("pages/sadstory", {name: name});
 });
 
-app.get("/THANKYOUDANGER", function(request, response) {
-  response.render('pages/danger');
+app.get("/THANKYOUDANGER", function(request, res) {
+  var responses = [];
+  responses.push({name: "joshy216", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/qrL1FOo5iqE" frameborder="0" allowfullscreen></iframe>`});
+  responses.push({name: "Marn", html: `<img src="thankyoufiles/marn.png" />`})
+  res.render('pages/danger', {responses: responses});
 });
 
 var finalURL = "/FREEGAVIN";
