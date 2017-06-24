@@ -108,7 +108,7 @@ app.get(finalURL, function(request, response) {
 });
 
 var allGuesses = [];
-var moment = require("moment");
+var moment = require("moment-timezone");
 app.get("/JDadmin", function(req, res) {
   res.json(allGuesses);
 })
@@ -116,7 +116,7 @@ app.get("/JDadmin", function(req, res) {
 app.post(finalURL, function(req, res) {
   var idea = req.body.idea;
   if(!idea) idea = "";
-  allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().format("LLLL")});
+  allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().tz("America/New York").format("LLLL")});
   idea = idea.toUpperCase().trim();
   var goodbyeMessage = "YES! It worked! I can feel my essence changing into a song idea now. Now, every time you hear Smash Mouth - All Star, I will live on even for the briefest of moments! I don't know if we will meet again, but if so, I will miss you.<br /><br />Although it's weird, I feel like something's following me LOL";
   var correctScript = "$('#response').html('');$('body').append('<link rel=\"stylesheet\" type=\"text/css\" href=\"http://csshake.surge.sh/csshake.min.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\" />'); $('#holder').addClass('shake-hard shake-opacity shake-constant');$('#button').prop('disabled', true);setTimeout(function() {$('#holder').remove(); $('body').append(\"<audio id='player'><source src='1.mp3'></audio>\");setTimeout(function() {$('#player')[0].play();}, 2000); setTimeout(function() {$('body').addClass('body');$('#response').html(\"" + goodbyeMessage + "\");setTimeout(function() {$('body').append(\"<br /><div class='TJWGr6D8kZs'><a href='ThankYouDanger' title='See you around, amigo' alt='See you around, amigo'>>:)</a></div>\");document.title = 'See you around, amigo';}, 1000 * 20);}, 2000);}, 3000);";
