@@ -79,6 +79,7 @@ app.get("/THANKYOUDANGER", function(request, res) {
   responses.push({name: "joshy216", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/qrL1FOo5iqE" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "PMosh", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/-87yyMJCeLE" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Marn", html: `<img src="thankyoufiles/marn.png" />`});
+  responses.push({name: "Pewter", html: `<img src="thankyoufiles/pewter1.jpg" style="width:800" /><br /><img src="thankyoufiles/pewter2.jpg" style="width:800" />`});
   responses.push({name: "Funiduber", html: `Hey Danger,<br />
 Thanks for all the fun putting together all of these ARGs. Even though I wasn't able to fully participate in this one it was still fun seeing all the things you came up with for us to solve. Your characters, from both this ARG and the Blink one, were a lot of fun to intereact with.  I can only imagine the amount of time and effort that went into creating all the puzzles and the stories. GG SYNB`});
   function shuffle(array) {
