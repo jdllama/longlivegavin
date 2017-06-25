@@ -78,6 +78,7 @@ app.get("/THANKYOUDANGER", function(request, res) {
   responses.push({name: "Comrade", html: `<audio controls><source src="thankyoufiles/comrade.mp3" type="audio/mpeg"></audio>`});
   responses.push({name: "joshy216", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/qrL1FOo5iqE" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "PMosh", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/-87yyMJCeLE" frameborder="0" allowfullscreen></iframe>`});
+  responses.push({name: "ALittleVoice and GruesomeOne", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/JP4z56lYL1I" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Marn", html: `<img src="thankyoufiles/marn.png" />`});
   responses.push({name: "Pewter", html: `<img src="thankyoufiles/pewter1.jpg" style="width:800px" /><br /><img src="thankyoufiles/pewter2.jpg" style="width:800px" />`});
   responses.push({name: "Funiduber", html: `Hey Danger,<br />
