@@ -80,12 +80,14 @@ app.get("/THANKYOUDANGER", function(request, res) {
   responses.push({name: "PMosh", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/-87yyMJCeLE" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "ALittleVoice and GruesomeOne", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/JP4z56lYL1I" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Marn", html: `<img src="thankyoufiles/marn.png" />`});
+  responses.push({name: "DannyMethane", html: `<img src="thankyoufiles/danny.jpg" />`});
   responses.push({name: "Pewter", html: `<img src="thankyoufiles/pewter1.jpg" style="width:800px" /><br /><img src="thankyoufiles/pewter2.jpg" style="width:800px" />`});
   responses.push({name: "Funiduber", html: `Hey Danger,<br />Thanks for all the fun putting together all of these ARGs. Even though I wasn't able to fully participate in this one it was still fun seeing all the things you came up with for us to solve. Your characters, from both this ARG and the Blink one, were a lot of fun to intereact with.  I can only imagine the amount of time and effort that went into creating all the puzzles and the stories. GG SYNB`});
   responses.push({name: "timescape", html: `RGFuZ2VyLCB0aGFua3Mgc28gbXVjaCBmb3IgYWxsIHlvdXIgZWZmb3J0cyBvbiBwdXR0aW5nIHRvZ2V0aGVyIHRoZSBKREFURTMgQVJHISBJdCB3YXMgc3VwZXIgZnVuIHRvIHBhcnRpY2lwYXRlIGFuZCBzZWUgd2hlcmUgdGhlIHN0b3J5IHdlbnQuIEkgcmVhbGx5IGxpa2VkIHRoZSBoaWRkZW4gZGF0YSBhc3BlY3RzLCB3aXRoIFJhciEgYW5kIFpJUCBhbmQgUE5HIGFuZCBKUEcgYW5kIFRJRkYgYWxsIHVwIGluIG91ciBmYWNlcyB0byBzb2x2ZSBhcyBhIGhpdmUgbWluZC4gVGhlIHN0b3J5IHdhcyBpbnRlcmVzdGluZyBhbmQgR2F2aW4gZGVmaW5pdGVseSBiZWNhbWUgdmVyeSBmbGVzaGVkIG91dCBhbmQgcmVhbCB0byBtZSwgc28gc29ycnkgR2F2aW4gZm9yIHRoZSB3YXlzIHdlIHVsdGltYXRlbHkgZmFpbGVkIHlvdSA6KSwgb3Igc2hvdWxkIEkgc2F5ID46KQ0KVGhhbmtzIGFnYWluLCBhbmQgc3RheSBncm9vdnkhIH50aW1lc2NhcGU=`});
   responses.push({name: "triplejumpster9000", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/OKC2pGRrZUQ" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Saaski", html: `<a href="http://bit.ly/2sKJauC" target="_blank">http://bit.ly/2sKJauC</a>`});
-  responses.push({name: "TheMightyLorax", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/0M3zAotcZ5o" frameborder="0" allowfullscreen></iframe>`})
+  responses.push({name: "TheMightyLorax", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/0M3zAotcZ5o" frameborder="0" allowfullscreen></iframe>`});
+  responses.push({name: "Feffers", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/v6cFXQlH3Ms" frameborder="0" allowfullscreen></iframe>`})
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
