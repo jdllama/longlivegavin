@@ -87,7 +87,8 @@ app.get("/THANKYOUDANGER", function(request, res) {
   responses.push({name: "triplejumpster9000", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/OKC2pGRrZUQ" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Saaski", html: `<a href="http://bit.ly/2sKJauC" target="_blank">http://bit.ly/2sKJauC</a>`});
   responses.push({name: "TheMightyLorax", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/0M3zAotcZ5o" frameborder="0" allowfullscreen></iframe>`});
-  responses.push({name: "Feffers", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/v6cFXQlH3Ms" frameborder="0" allowfullscreen></iframe>`})
+  responses.push({name: "Feffers", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/v6cFXQlH3Ms" frameborder="0" allowfullscreen></iframe>`});
+  responses.push({name: "Mika", html: `DANGER YOU BUTT GOOD JOB`});
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
