@@ -139,7 +139,26 @@ app.post(finalURL, function(req, res) {
   ];
   var script = "$('#response').html(\"" + potentialMessages[Math.floor(Math.random()*potentialMessages.length)] + "\")";
   if(idea === "ALLSTAR" || idea === "ALL STAR" || idea === "ALL-STAR" || idea === "ALL*STAR") {
-    allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().tz("America/New York").format("LLLL")});
+    //allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().tz("America/New York").format("LLLL")});
+    var helper = require('sendgrid').mail;
+    var from_email = new helper.Email('test@example.com');
+    var to_email = new helper.Email('jedidrunkenllama@gmail.com');
+    var subject = 'Someone solved the puzzle!!';
+    var content = new helper.Content('text/plain', JSON.stringify({IP: req.headers['x-forwarded-for']}));
+    var mail = new helper.Mail(from_email, subject, to_email, content);
+
+    var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+    var request = sg.emptyRequest({
+      method: 'POST',
+      path: '/v3/mail/send',
+      body: mail.toJSON(),
+    });
+
+    sg.API(request, function(error, response) {
+      console.log(response.statusCode);
+      console.log(response.body);
+      console.log(response.headers);
+    });
     script = correctScript;
   }
   else if(idea === "CAN'T GET ENOUGH OF YOU BABY") {
@@ -176,7 +195,6 @@ app.get('/PMOSH.rar', function(request, response) {
 });
 
 app.get("*", function(req, res) {
-//app.get("/fakepage", function(req, res) {
   var gavinFacts = [
     "The Jeffcoat name came from Sir Gweyneldor Useyourskinascoat, who used his first opponent, Jeff, as a skin. Rumor has it it was very loose and fluffy.",
     "Gavin once calculated the likelihood of a couch being haunted simply off the top of his head!...The likelihood was zero.",
