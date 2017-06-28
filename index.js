@@ -139,9 +139,9 @@ app.post(finalURL, function(req, res) {
   ];
   var script = "$('#response').html(\"" + potentialMessages[Math.floor(Math.random()*potentialMessages.length)] + "\")";
   if(idea === "ALLSTAR" || idea === "ALL STAR" || idea === "ALL-STAR" || idea === "ALL*STAR") {
-    //allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().tz("America/New York").format("LLLL")});
+    allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().tz("America/New York").format("LLLL")});
     var helper = require('sendgrid').mail;
-    var from_email = new helper.Email('test@example.com');
+    var from_email = new helper.Email('admin@longlivegav.in');
     var to_email = new helper.Email('jedidrunkenllama@gmail.com');
     var subject = 'Someone solved the puzzle!!';
     var content = new helper.Content('text/plain', JSON.stringify({IP: req.headers['x-forwarded-for']}));
