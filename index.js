@@ -87,7 +87,7 @@ app.get("/THANKYOUDANGER", function(request, res) {
   responses.push({name: "triplejumpster9000", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/OKC2pGRrZUQ" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Saaski", html: `<a href="http://bit.ly/2sKJauC" target="_blank">http://bit.ly/2sKJauC</a>`});
   responses.push({name: "TheMightyLorax", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/0M3zAotcZ5o" frameborder="0" allowfullscreen></iframe>`});
-  responses.push({name: "Feffers", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/v6cFXQlH3Ms" frameborder="0" allowfullscreen></iframe>`});
+  responses.push({name: "Feffers and Karr", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/v6cFXQlH3Ms" frameborder="0" allowfullscreen></iframe>`});
   responses.push({name: "Mika", html: `<iframe width="560" height="315" src="https://www.youtube.com/embed/vOb1IWLk9ug" frameborder="0" allowfullscreen></iframe>`});
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -174,8 +174,8 @@ app.get('/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
-//app.get("*", function(req, res) {
-app.get("/fakepage", function(req, res) {
+app.get("*", function(req, res) {
+//app.get("/fakepage", function(req, res) {
   var gavinFacts = [
     "The Jeffcoat name came from Sir Gweyneldor Useyourskinascoat, who used his first opponent, Jeff, as a skin. Rumor has it it was very loose and fluffy.",
     "Gavin once calculated the likelihood of a couch being haunted simply off the top of his head!...The likelihood was zero.",
