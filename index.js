@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var cookieParser = require("cookie-parser");
 var bodyParser = require('body-parser');
 
 app.set('port', (process.env.PORT || 5000));
@@ -12,6 +13,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 
 app.use(function(req, res, next) {
@@ -121,7 +123,8 @@ app.get(finalURL, function(request, response) {
 var allGuesses = [];
 var moment = require("moment-timezone");
 app.get("/JDadmin", function(req, res) {
-  res.json(allGuesses);
+
+  res.cookie("ITS_CLYDE_TIME", true).json(allGuesses);
 })
 
 app.post(finalURL, function(req, res) {
@@ -155,9 +158,7 @@ app.post(finalURL, function(req, res) {
     });
 
     sg.API(request, function(error, response) {
-      console.log(response.statusCode);
-      console.log(response.body);
-      console.log(response.headers);
+
     });
     script = correctScript;
   }
