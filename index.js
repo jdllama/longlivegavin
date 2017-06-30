@@ -193,6 +193,13 @@ app.get("/TURBOFART69", function(request, response) {
   response.redirect('/404');
 });
 
+app.get("/TRAPGAVIN", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render("pages/newgameplus/stage5");
+  }
+  response.redirect('/404');
+});
+
 app.post(finalURL, function(req, res) {
   var idea = req.body.idea;
   if(!idea) idea = "";
@@ -261,6 +268,10 @@ app.get('/POOKA/HANKCHIEN', function(request, response) {
 
 app.get('/HANKCHIEN/TURBOFART69', function(request, response) {
   response.redirect('/TURBOFART69');
+});
+
+app.get('/TURBOFART69/TRAPGAVIN', function(request, response) {
+  response.redirect('/TRAPGAVIN');
 });
 
 app.get('/PINKY/PMOSH.rar', function(request, response) {
