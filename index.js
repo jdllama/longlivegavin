@@ -179,6 +179,13 @@ app.get("/POOKA", function(request, response) {
   response.redirect('/404');
 });
 
+app.get("/HANKCHIEN", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render("pages/newgameplus/stage3");
+  }
+  response.redirect('/404');
+});
+
 var allGuesses = [];
 var moment = require("moment-timezone");
 
