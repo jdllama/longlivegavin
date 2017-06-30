@@ -80,7 +80,7 @@ app.get('/DIRIGIBLE', function(request, response) {
 [white(2),red(1),yellow(1),red(4),yellow(1),red(1),white(3),],
 [white(3),yellow(1),white(4),yellow(1),white(4),],
 [white(1),yellow(4),white(1),yellow(4),white(3),],
-[`While I dig this arcade game from 1982, people like this are full of hot air. - >:)`]
+[`While I dig this arcade game from 1982, enemies like this are full of hot air. - >:)`]
   ];
   var parts;
   if(request.cookies.ITS_CLYDE_TIME) {
