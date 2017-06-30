@@ -162,7 +162,9 @@ app.get("/THANKYOUDANGER", function(request, res) {
 
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
-  //response.send("This is the last page. I'm keeping the ending a secret for now, though.");
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render('pages/stage2');
+  }
   response.render('pages/finalstage');
 });
 
