@@ -226,7 +226,7 @@ app.get('/PINKY/PMOSH.rar', function(request, response) {
 
 app.get('/PMOSH.rar', function(request, response) {
   var filePath = "";
-  if(req.cookies.ITS_CLYDE_TIME) {
+  if(request.cookies.ITS_CLYDE_TIME) {
     filePath = "public/clyde.mp3";
   }
   else {
