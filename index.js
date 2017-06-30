@@ -186,8 +186,12 @@ app.get("/HANKCHIEN", function(request, response) {
   response.redirect('/404');
 });
 
-var allGuesses = [];
-var moment = require("moment-timezone");
+app.get("/TURBOFART69", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render("pages/newgameplus/stage4");
+  }
+  response.redirect('/404');
+});
 
 app.post(finalURL, function(req, res) {
   var idea = req.body.idea;
@@ -204,7 +208,6 @@ app.post(finalURL, function(req, res) {
   ];
   var script = "$('#response').html(\"" + potentialMessages[Math.floor(Math.random()*potentialMessages.length)] + "\")";
   if(idea === "ALLSTAR" || idea === "ALL STAR" || idea === "ALL-STAR" || idea === "ALL*STAR") {
-    allGuesses.push({IP: req.headers['x-forwarded-for'], idea: idea, time: moment().tz("America/New York").format("LLLL")});
     var helper = require('sendgrid').mail;
     var from_email = new helper.Email('admin@longlivegav.in');
     var to_email = new helper.Email('jedidrunkenllama@gmail.com');
@@ -250,6 +253,14 @@ app.get('/DONGLE/BEGINS', function(request, response) {
 
 app.get('/ENDS/FREEGAVIN', function(request, response) {
   response.redirect('/FREEGAVIN');
+});
+
+app.get('/POOKA/HANKCHIEN', function(request, response) {
+  response.redirect('/HANKCHIEN');
+});
+
+app.get('/HANKCHIEN/TURBOFART69', function(request, response) {
+  response.redirect('/TURBOFART69');
 });
 
 app.get('/PINKY/PMOSH.rar', function(request, response) {
