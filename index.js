@@ -44,6 +44,9 @@ app.get('/DIRIGIBLE', function(request, response) {
   var red = function(num) {
     return "<span style='color: red;'>" + num + "</span>";
   }
+  var yellow = function(num) {
+    return "<span style='color: yellow;'>" + num + "</span>";
+  }
   var gray = function(num) {
     return "<span style='color: gray;'>" + num + "</span>";
   }
