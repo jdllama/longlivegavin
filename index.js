@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
 
 app.get("/", function(req, res) {
   if(req.cookies.ITS_CLYDE_TIME) {
-    res.render("pages/newgameplus/stage0")
+    res.render("pages/newgameplus/stage0");
   }
   else {
     res.render('pages/stage0');
@@ -95,28 +95,28 @@ app.get('/DIRIGIBLE', function(request, response) {
 
 app.get('/PINKY', function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
-    return response.render('pages/stage2');
+    return response.render("pages/newgameplus/no");
   }
   response.render('pages/stage2');
 });
 
 app.get('/DONGLE', function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
-    return response.render('pages/stage2');
+    return response.render("pages/newgameplus/no");
   }
   response.render('pages/stage3');
 });
 
 app.get("/ENDS", function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
-    return response.render('pages/stage2');
+    return response.render("pages/newgameplus/no");
   }
   response.render("pages/sadstory");
 });
 
 app.get("/BEGINS", function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
-    return response.render('pages/stage2');
+    return response.render("pages/newgameplus/no");
   }
   response.render("pages/nostop");
 });
@@ -163,7 +163,7 @@ app.get("/THANKYOUDANGER", function(request, res) {
 var finalURL = "/FREEGAVIN";
 app.get(finalURL, function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
-    return response.render('pages/stage2');
+    return response.render("pages/newgameplus/no");
   }
   response.render('pages/finalstage');
 });
