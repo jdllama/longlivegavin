@@ -264,22 +264,11 @@ app.get('/PMOSH.rar', function(request, response) {
   })
 });
 
-/*
-app.get('/PMOSH.rar', function(request, response) {
-  response.redirect('/PMOSH.rar');
+app.get("*", function(request, response) {
+  response.redirect('/404');
 });
 
-app.get('/PMOSH.mp3', function(request, response) {
-  var fs = require("fs");
-  fs.readFile("public/PMOSH.rar", function(err, data) {
-    if(err) throw err;
-    response.send(data);
-  })
-//  response.redirect('/PMOSH.rar');
-});
-*/
-
-app.get("*", function(req, res) {
+app.get("/404", function(req, res) {
   var gavinFacts = [
     "The Jeffcoat name came from Sir Gweyneldor Useyourskinascoat, who used his first opponent, Jeff, as a skin. Rumor has it it was very loose and fluffy.",
     "Gavin once calculated the likelihood of a couch being haunted simply off the top of his head!...The likelihood was zero.",
