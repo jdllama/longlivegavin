@@ -172,6 +172,13 @@ app.get("/NEWGAMEPLUS", function(request, response) {
   response.cookie("ITS_CLYDE_TIME", true).redirect('/');
 });
 
+app.get("/POOKA", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render("pages/newgameplus/stage2");
+  }
+  response.redirect('/404');
+});
+
 var allGuesses = [];
 var moment = require("moment-timezone");
 
