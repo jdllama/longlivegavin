@@ -41,6 +41,12 @@ app.get('/DIRIGIBLE', function(request, response) {
   var white = function(num) {
     return "<span style='color: white;'>" + num + "</span>";
   }
+  var red = function(num) {
+    return "<span style='color: red;'>" + num + "</span>";
+  }
+  var gray = function(num) {
+    return "<span style='color: gray;'>" + num + "</span>";
+  }
   var pinkyParts = [
     [black(3),pink(4),black(3)],
     [black(2),pink(6),black(2)],
@@ -54,18 +60,18 @@ app.get('/DIRIGIBLE', function(request, response) {
     [pink(1),black(2),pink(1),black(2),pink(1),black(2),pink(1)]
   ];
   var pookaParts = [
-    "<span style='color: white'>2</span><span style='color: #ff0000'>8</span><span style='color: #0000ff'>3</span>",
-    "<span style='color: white'>1</span><span style='color: #ffff00'>8</span><span style='color: #ff0000'>2</span><span style='color: #0000ff'>2</span>",
-    "<span style='color: #ffff00'>2</span><span style='color: white'>6</span><span style='color: #ffff00'>2</span><span style='color: #ff0000'>2</span><span style='color: #0000ff'>1</span>",
-    "<span style='color: #ffff00'>1</span><span style='color: white'>1</span><span style='color: #000000'>1</span><span style='color: white'>2</span><span style='color: #000000'>1</span><span style='color: white'>3</span><span style='color: #ffff00'>3</span><span style='color: #0000ff'>1</span>",
-    "<span style='color: #ffff00'>1</span><span style='color: white'>1</span><span style='color: #000000'>1</span><span style='color: white'>2</span><span style='color: #000000'>1</span><span style='color: white'>3</span><span style='color: #ffff00'>3</span><span style='color: #0000ff'>1</span>",
-    "<span style='color: #ffff00'>1</span><span style='color: white'>2</span><span style='color: #ffff00'>1</span><span style='color: white'>4</span><span style='color: #ffff00'>2</span><span style='color: #ff0000'>2</span><span style='color: #0000ff'>1</span>",
-    "<span style='color: #ffff00'>9</span><span style='color: #ff0000'>3</span><span style='color: #b7b7b7'>1</span>",
-    "<span style='color: #ff0000'>1</span><span style='color: #ffff00'>2</span><span style='color: #ff0000'>2</span><span style='color: #ffff00'>3</span><span style='color: #ff0000'>3</span><span style='color: white'>1</span><span style='color: #b7b7b7'>1</span>",
-    "<span style='color: white'>1</span><span style='color: #ff0000'>9</span><span style='color: #b7b7b7'>3</span>",
-    "<span style='color: white'>2</span><span style='color: #ff0000'>1</span><span style='color: #ffff00'>1</span><span style='color: #ff0000'>4</span><span style='color: #ffff00'>1</span><span style='color: #ff0000'>1</span><span style='color: #0000ff'>3</span>",
-    "<span style='color: white'>3</span><span style='color: #ffff00'>1</span><span style='color: white'>4</span><span style='color: #ffff00'>1</span><span style='color: #0000ff'>4</span>",
-    "<span style='color: white'>1</span><span style='color: #ffff00'>4</span><span style='color: white'>1</span><span style='color: #ffff00'>4</span><span style='color: #0000ff'>3</span>",
+    [white(2),red(8),white(3),],
+[white(1),yellow(8),red(2),white(2),],
+[yellow(2),white(6),yellow(2),red(2),white(1),],
+[yellow(1),white(1),black(1),white(2),black(1),white(3),yellow(3),white(1),],
+[yellow(1),white(1),black(1),white(2),black(1),white(3),yellow(3),white(1),],
+[yellow(1),white(2),yellow(1),white(4),yellow(2),red(2),white(1),],
+[yellow(9),red(3),gray(1),],
+[red(1),yellow(2),red(2),yellow(3),red(3),white(1),gray(1),],
+[white(1),red(9),gray(3),],
+[white(2),red(1),yellow(1),red(4),yellow(1),red(1),white(3),],
+[white(3),yellow(1),white(4),yellow(1),white(4),],
+[white(1),yellow(4),white(1),yellow(4),white(3),],
   ];
   var parts;
   if(request.cookies.ITS_CLYDE_TIME) {
@@ -74,7 +80,6 @@ app.get('/DIRIGIBLE', function(request, response) {
   else {
     parts = pinkyParts;
   }
-  console.log(parts);
   var index = Math.floor(Math.random()*parts.length);
   var item;
   if(parts[index].reverse) item = parts[index].reverse();
