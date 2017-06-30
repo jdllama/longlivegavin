@@ -25,7 +25,14 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", function(req, res) {
-  res.render('pages/stage0');
+  if(req.cookies.ITS_CLYDE_TIME) {
+    //parts = pookaParts;
+    res.render("pages/newgameplus/stage0")
+  }
+  else {
+    res.render('pages/stage0');
+  }
+  //res.render('pages/stage0');
 });
 
 app.get('/DIRIGIBLE', function(request, response) {
