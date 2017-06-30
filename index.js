@@ -157,7 +157,7 @@ app.get(finalURL, function(request, response) {
 });
 
 app.get("/NEWGAMEPLUS", function(request, response) {
-  response.cookie("ITS_CLYDE_TIME", true).redirect('/DIRIGIBLE');
+  response.cookie("ITS_CLYDE_TIME", true).redirect('/');
 });
 
 var allGuesses = [];
