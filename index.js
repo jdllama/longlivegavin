@@ -225,6 +225,10 @@ app.post(finalURL, function(req, res) {
   res.json({script:script, idea: idea});
 });
 
+app.get('/DIRIGIBLE/POOKA', function(request, response) {
+  response.redirect('/POOKA');
+});
+
 app.get('/DIRIGIBLE/PINKY', function(request, response) {
   response.redirect('/PINKY');
 });
