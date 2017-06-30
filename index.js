@@ -26,13 +26,11 @@ app.use(function(req, res, next) {
 
 app.get("/", function(req, res) {
   if(req.cookies.ITS_CLYDE_TIME) {
-    //parts = pookaParts;
     res.render("pages/newgameplus/stage0")
   }
   else {
     res.render('pages/stage0');
   }
-  //res.render('pages/stage0');
 });
 
 app.get('/DIRIGIBLE', function(request, response) {
@@ -227,6 +225,21 @@ app.get('/PINKY/PMOSH.rar', function(request, response) {
 });
 
 app.get('/PMOSH.rar', function(request, response) {
+  var filePath = "";
+  if(req.cookies.ITS_CLYDE_TIME) {
+    filePath = "public/clyde.mp3";
+  }
+  else {
+    filePath = "public/laura.mp3";
+  }
+  fs.readFile(filePath, function(err, data) {
+    if(err) throw err;
+    response.send(data);
+  })
+});
+
+/*
+app.get('/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
@@ -238,6 +251,7 @@ app.get('/PMOSH.mp3', function(request, response) {
   })
 //  response.redirect('/PMOSH.rar');
 });
+*/
 
 app.get("*", function(req, res) {
   var gavinFacts = [
