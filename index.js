@@ -26,7 +26,6 @@ app.use(function(req, res, next) {
 
 app.get("/", function(req, res) {
   res.render('pages/stage0');
-  //res.status(404).send("AY YO WE AIN'T READY YET BRO");
 });
 
 app.get('/DIRIGIBLE', function(request, response) {
@@ -54,9 +53,30 @@ app.get('/DIRIGIBLE', function(request, response) {
     [pink(1),black(1),pink(2),black(2),pink(2),black(1),pink(1)],
     [pink(1),black(2),pink(1),black(2),pink(1),black(2),pink(1)]
   ];
-  var index = Math.floor(Math.random()*pinkyParts.length);
-  var item = pinkyParts[index].reverse();
-  response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: pinkyParts.length, ghostIndex: index + 1});
+  var pookaParts = [
+    "<span style='color: white'>2</span><span style='color: #ff0000'>8</span><span style='color: #0000ff'>3</span>",
+    "<span style='color: white'>1</span><span style='color: #ffff00'>8</span><span style='color: #ff0000'>2</span><span style='color: #0000ff'>2</span>",
+    "<span style='color: #ffff00'>2</span><span style='color: white'>6</span><span style='color: #ffff00'>2</span><span style='color: #ff0000'>2</span><span style='color: #0000ff'>1</span>",
+    "<span style='color: #ffff00'>1</span><span style='color: white'>1</span><span style='color: #000000'>1</span><span style='color: white'>2</span><span style='color: #000000'>1</span><span style='color: white'>3</span><span style='color: #ffff00'>3</span><span style='color: #0000ff'>1</span>",
+    "<span style='color: #ffff00'>1</span><span style='color: white'>1</span><span style='color: #000000'>1</span><span style='color: white'>2</span><span style='color: #000000'>1</span><span style='color: white'>3</span><span style='color: #ffff00'>3</span><span style='color: #0000ff'>1</span>",
+    "<span style='color: #ffff00'>1</span><span style='color: white'>2</span><span style='color: #ffff00'>1</span><span style='color: white'>4</span><span style='color: #ffff00'>2</span><span style='color: #ff0000'>2</span><span style='color: #0000ff'>1</span>",
+    "<span style='color: #ffff00'>9</span><span style='color: #ff0000'>3</span><span style='color: #b7b7b7'>1</span>",
+    "<span style='color: #ff0000'>1</span><span style='color: #ffff00'>2</span><span style='color: #ff0000'>2</span><span style='color: #ffff00'>3</span><span style='color: #ff0000'>3</span><span style='color: white'>1</span><span style='color: #b7b7b7'>1</span>",
+    "<span style='color: white'>1</span><span style='color: #ff0000'>9</span><span style='color: #b7b7b7'>3</span>",
+    "<span style='color: white'>2</span><span style='color: #ff0000'>1</span><span style='color: #ffff00'>1</span><span style='color: #ff0000'>4</span><span style='color: #ffff00'>1</span><span style='color: #ff0000'>1</span><span style='color: #0000ff'>3</span>",
+    "<span style='color: white'>3</span><span style='color: #ffff00'>1</span><span style='color: white'>4</span><span style='color: #ffff00'>1</span><span style='color: #0000ff'>4</span>",
+    "<span style='color: white'>1</span><span style='color: #ffff00'>4</span><span style='color: white'>1</span><span style='color: #ffff00'>4</span><span style='color: #0000ff'>3</span>",
+  ];
+  var parts;
+  if(request.cookies.ITS_CLYDE_TIME) {
+    parts = pookaParts;
+  }
+  else {
+    parts = pinkyParts;
+  }
+  var index = Math.floor(Math.random()*parts.length);
+  var item = parts[index].reverse();
+  response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: parts.length, ghostIndex: index + 1});
 });
 
 app.get('/PINKY', function(request, response) {
@@ -120,12 +140,12 @@ app.get(finalURL, function(request, response) {
   response.render('pages/finalstage');
 });
 
+app.get("/NEWGAMEPLUS", function(request, response) {
+  response.cookie("ITS_CLYDE_TIME", true).redirect('/DIRIGIBLE');
+});
+
 var allGuesses = [];
 var moment = require("moment-timezone");
-app.get("/JDadmin", function(req, res) {
-
-  res.cookie("ITS_CLYDE_TIME", true).json(allGuesses);
-})
 
 app.post(finalURL, function(req, res) {
   var idea = req.body.idea;
@@ -158,7 +178,6 @@ app.post(finalURL, function(req, res) {
     });
 
     sg.API(request, function(error, response) {
-
     });
     script = correctScript;
   }
