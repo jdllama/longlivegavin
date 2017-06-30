@@ -94,18 +94,30 @@ app.get('/DIRIGIBLE', function(request, response) {
 });
 
 app.get('/PINKY', function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render('pages/stage2');
+  }
   response.render('pages/stage2');
 });
 
 app.get('/DONGLE', function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render('pages/stage2');
+  }
   response.render('pages/stage3');
 });
 
 app.get("/ENDS", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render('pages/stage2');
+  }
   response.render("pages/sadstory");
 });
 
 app.get("/BEGINS", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render('pages/stage2');
+  }
   response.render("pages/nostop");
 });
 
