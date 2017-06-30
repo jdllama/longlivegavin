@@ -230,6 +230,15 @@ app.get('/PMOSH.rar', function(request, response) {
   response.redirect('/PMOSH.rar');
 });
 
+app.get('/PMOSH.mp3', function(request, response) {
+  var fs = require("fs");
+  fs.readFile("public/PMOSH.rar", function(err, data) {
+    if(err) throw err;
+    response.send(data);
+  })
+//  response.redirect('/PMOSH.rar');
+});
+
 app.get("*", function(req, res) {
   var gavinFacts = [
     "The Jeffcoat name came from Sir Gweyneldor Useyourskinascoat, who used his first opponent, Jeff, as a skin. Rumor has it it was very loose and fluffy.",
