@@ -74,6 +74,7 @@ app.get('/DIRIGIBLE', function(request, response) {
   else {
     parts = pinkyParts;
   }
+  console.log(parts);
   var index = Math.floor(Math.random()*parts.length);
   var item = parts[index].reverse();
   response.render('pages/stage1', {ghostPiece: item.join(""), ghostLength: parts.length, ghostIndex: index + 1});
