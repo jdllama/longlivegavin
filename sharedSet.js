@@ -3,7 +3,7 @@ module.exports = function(app) {
         if(req.cookies.ITS_CLYDE_TIME) {
             res.render("pages/newgameplus/stage0");
         }
-        else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+        else if(req.cookies.GO_FOR_THE_GOOD_ENDING) {
             res.render("pages/newgameultra/stage0");
         }
         else {
