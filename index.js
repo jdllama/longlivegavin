@@ -245,7 +245,7 @@ app.get("/INCREDULOUS", function(request, response) {
 });
 
 app.get("/MARIO", function(request, response) {
-  if(request.cookies.ITS_CLYDE_TIME) {
+  if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
     return response.render("pages/newgameultra/stage2");
   }
   response.redirect('/404');
@@ -299,6 +299,10 @@ app.get('/DIRIGIBLE/POOKA', function(request, response) {
 
 app.get('/DIRIGIBLE/PINKY', function(request, response) {
   response.redirect('/PINKY');
+});
+
+app.get('/DIRIGIBLE/MARIO', function(request, response) {
+  response.redirect('/MARIO');
 });
 
 app.get('/PINKY/DONGLE', function(request, response) {
