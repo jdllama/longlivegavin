@@ -157,7 +157,6 @@ app.get("/THANKYOUDANGER", function(request, res) {
 
     return array;
   }
-  console.log(typeof request.cookies.ITS_CLYDE_TIME, typeof request.cookies.ITS_CLYDE_TIME != "undefined")
   responses = shuffle(responses);
   res.render('pages/danger', {responses: responses, isNewGameAlready: typeof request.cookies.ITS_CLYDE_TIME != "undefined"});
 });
@@ -172,6 +171,10 @@ app.get(finalURL, function(request, response) {
 
 app.get("/NEWGAMEPLUS", function(request, response) {
   response.cookie("ITS_CLYDE_TIME", true).redirect('/');
+});
+
+app.get("/NEWGAMEULTRA", function(request, response) {
+  response.cookie("ITS_CLYDE_TIME", "", {expires: new Date()}).cookie("GO_FOR_THE_GOOD_ENDING", true).redirect('/');
 });
 
 app.get("/POOKA", function(request, response) {
