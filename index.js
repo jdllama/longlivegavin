@@ -158,7 +158,7 @@ app.get("/THANKYOUDANGER", function(request, res) {
     return array;
   }
   responses = shuffle(responses);
-  res.render('pages/danger', {responses: responses, isNewGameAlready: request.cookies.ITS_CLYDE_TIME || false});
+  res.render('pages/danger', {responses: responses, isNewGameAlready: typeof request.cookies.ITS_CLYDE_TIME != "undefined"});
 });
 
 var finalURL = "/FREEGAVIN";
