@@ -118,12 +118,18 @@ app.get('/PINKY', function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
     return response.render("pages/newgameplus/no");
   }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+    return response.redirect('/404');
+  }
   response.render('pages/stage2');
 });
 
 app.get('/DONGLE', function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
     return response.render("pages/newgameplus/no");
+  }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+    return response.redirect('/404');
   }
   response.render('pages/stage3');
 });
@@ -132,12 +138,18 @@ app.get("/ENDS", function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
     return response.render("pages/newgameplus/no");
   }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+    return response.redirect('/404');
+  }
   response.render("pages/sadstory");
 });
 
 app.get("/BEGINS", function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
     return response.render("pages/newgameplus/no");
+  }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+    return response.redirect('/404');
   }
   response.render("pages/nostop");
 });
@@ -228,6 +240,13 @@ app.get("/TRAPGAVIN", function(request, response) {
 app.get("/INCREDULOUS", function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
     return response.render("pages/newgameplus/stage6");
+  }
+  response.redirect('/404');
+});
+
+app.get("/MARIO", function(request, response) {
+  if(request.cookies.ITS_CLYDE_TIME) {
+    return response.render("pages/newgameultra/stage2");
   }
   response.redirect('/404');
 });
