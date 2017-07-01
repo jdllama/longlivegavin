@@ -346,6 +346,9 @@ app.get('/PMOSH.rar', function(request, response) {
   if(request.cookies.ITS_CLYDE_TIME) {
     filePath = "public/clyde.mp3";
   }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+    filePath = "public/true.mp3";
+  }
   else {
     filePath = "public/laura.mp3";
   }
