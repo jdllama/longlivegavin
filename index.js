@@ -28,6 +28,9 @@ app.get("/", function(req, res) {
   if(req.cookies.ITS_CLYDE_TIME) {
     res.render("pages/newgameplus/stage0");
   }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+    res.render("pages/newgameultra/stage0");
+  }
   else {
     res.render('pages/stage0');
   }
