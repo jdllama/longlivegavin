@@ -104,7 +104,7 @@ app.get('/DIRIGIBLE', function(request, response) {
     parts = pookaParts;
   }
   else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
-    parts = pookaParts;
+    parts = marioParts;
   }
   else {
     parts = pinkyParts;
