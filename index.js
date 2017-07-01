@@ -157,7 +157,7 @@ app.get("/THANKYOUDANGER", function(request, res) {
 
     return array;
   }
-  console.log(typeof request.cookies.ITS_CLYDE_TIME != "undefined")
+  console.log(typeof request.cookies.ITS_CLYDE_TIME, typeof request.cookies.ITS_CLYDE_TIME != "undefined")
   responses = shuffle(responses);
   res.render('pages/danger', {responses: responses, isNewGameAlready: typeof request.cookies.ITS_CLYDE_TIME != "undefined"});
 });
