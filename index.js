@@ -82,8 +82,28 @@ app.get('/DIRIGIBLE', function(request, response) {
 [white(1),yellow(4),white(1),yellow(4),white(3),],
 [`While I dig this arcade game from 1982, enemies like this are full of hot air. - >:)`]
   ];
+  var marioParts = [
+    ["<span myColor='#ffffff'>3</span>", "<span myColor='#000000'>2</span>", "<span myColor='#ffffff'>4</span>", "<span myColor='#000000'>2</span>", "<span myColor='#ffffff'>4</span>"],
+    ["<span myColor='#ffffff'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>1</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>1</span>", "<span myColor='#000000'>2</span>", "<span myColor='#f0d0b0'>1</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>4</span>"],
+    ["<span myColor='#ffffff'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>2</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ff0000'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>4</span>"],
+    ["<span myColor='#ffffff'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>2</span>", "<span myColor='#ff0000'>4</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>4</span>"],
+    ["<span myColor='#ffffff'>2</span>", "<span myColor='#000000'>2</span>", "<span myColor='#f0d0b0'>1</span>", "<span myColor='#ff0000'>2</span>", "<span myColor='#000000'>6</span>", "<span myColor='#ffffff'>2</span>"],
+    ["<span myColor='#ffffff'>1</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ff0000'>3</span>", "<span myColor='#000000'>9</span>", "<span myColor='#ffffff'>1</span>"],
+    ["<span myColor='#ffffff'>1</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ff0000'>2</span>", "<span myColor='#000000'>2</span>", "<span myColor='#f0d0b0'>5</span>", "<span myColor='#000000'>2</span>", "<span myColor='#ffffff'>2</span>"],
+    ["<span myColor='#000000'>5</span>", "<span myColor='#f0d0b0'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>1</span>", "<span myColor='#000000'>2</span>", "<span myColor='#ffffff'>3</span>"],
+    ["<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>2</span>", "<span myColor='#000000'>2</span>", "<span myColor='#f0d0b0'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>1</span>", "<span myColor='#000000'>3</span>", "<span myColor='#ffffff'>2</span>"],
+    ["<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>2</span>", "<span myColor='#000000'>3</span>", "<span myColor='#f0d0b0'>7</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>1</span>"],
+    ["<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>3</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>2</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>5</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>1</span>"],
+    ["<span myColor='#ffffff'>1</span>", "<span myColor='#000000'>1</span>", "<span myColor='#f0d0b0'>4</span>", "<span myColor='#000000'>4</span>", "<span myColor='#f0d0b0'>2</span>", "<span myColor='#000000'>3</span>"],
+    ["<span myColor='#ffffff'>2</span>", "<span myColor='#000000'>2</span>", "<span myColor='#f0d0b0'>4</span>", "<span myColor='#000000'>5</span>", "<span myColor='#ffffff'>2</span>"],
+    ["<span myColor='#ffffff'>3</span>", "<span myColor='#000000'>2</span>", "<span myColor='#f0d0b0'>5</span>", "<span myColor='#000000'>1</span>", "<span myColor='#ffffff'>4</span>"],
+    ["<span myColor='#ffffff'>5</span>", "<span myColor='#000000'>5</span>", "<span myColor='#ffffff'>5</span>"],
+  ];
   var parts;
   if(request.cookies.ITS_CLYDE_TIME) {
+    parts = pookaParts;
+  }
+  else if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
     parts = pookaParts;
   }
   else {
