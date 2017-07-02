@@ -59,6 +59,6 @@ app.get('/DIRIGIBLE/POOKA', function(request, response) {
 });
 
     app.get('/HANKCHIEN/PMOSH.rar', function(request, response) {
-    response.redirect('/PMOSH.rar');
+        response.redirect('/PMOSH.rar');
     });
 }
