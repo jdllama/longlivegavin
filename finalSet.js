@@ -39,7 +39,10 @@ module.exports = function(app) {
     app.get("/SAVELAURAANDGAVINGODDAMMIT", function(request, response) {
         var IP = request.headers['x-forwarded-for'];
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
-            if(!activeAttempts[IP] || activeAttempts[IP].active == false) {
+            if(!activeAttempts[IP]) {
+                return response.redirect('/404');
+            }
+            else if (activeAttempts[IP].active == false) {
                 return response.render("pages/newgameultra/failedgame");
             }
             else {
@@ -64,8 +67,8 @@ module.exports = function(app) {
         var endings = {
             "33": "firstending",
             "54": "secondending",
-            "66": "secondending",
-            "153": "secondending",
+            "66": "thirdending",
+            "153": "trueending",
         }
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
             if(endings[dimension]) {
