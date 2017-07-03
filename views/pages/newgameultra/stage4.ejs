@@ -2,11 +2,56 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>SHE DESERVED IT</title>
+<title>Contra and Gradius have nothing on this!</title>
 <% include ../../partials/angela.ejs %>
 </head>
 <body onload="initgame()">
 <script>
+//Konami Code...code....from https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
+
+// a key map of allowed keys
+var allowedKeys = {
+  37: 'left',
+  38: 'up',
+  39: 'right',
+  40: 'down',
+  65: 'a',
+  66: 'b'
+};
+
+// the 'official' Konami Code sequence
+var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
+// a variable to remember the 'position' the user has reached so far.
+var konamiCodePosition = 0;
+
+// add keydown event listener
+document.addEventListener('keydown', function(e) {
+  // get the value of the key code from the key map
+  var key = allowedKeys[e.keyCode];
+  // get the value of the required key from the konami code
+  var requiredKey = konamiCode[konamiCodePosition];
+
+  // compare the key with the required key
+  if (key == requiredKey) {
+
+    // move to the next key in the konami code sequence
+    konamiCodePosition++;
+
+    // if the last key is reached, activate cheats
+    if (konamiCodePosition == konamiCode.length) {
+      activateCheats();
+      konamiCodePosition = 0;
+    }
+  } else {
+    konamiCodePosition = 0;
+  }
+});
+
+function activateCheats() {
+  location.href = './SAVELAURAANDGAVINGODDAMMIT';
+}
+
 //Lights Out code from http://froxot.de/lights.php
 var gamenumber=0;
 var number_of_rows=25;//y
@@ -37,7 +82,9 @@ function onSelect(x,y) {
 	flip (x-1,y-1);flip (x-1,y);flip (x-1,y+1);
 	flip (x,y-1);flip (x,y);flip (x,y+1);
 	flip (x+1,y-1);flip (x+1,y);flip (x+1,y+1);
-	if (solved()) alert("Congratulation! You have solved the puzzle in "+done_steps+" steps.");
+	if (solved()) {
+        activateCheats();
+    }//alert("Congratulation! You have solved the puzzle in "+done_steps+" steps.");
 return;
 
 }
