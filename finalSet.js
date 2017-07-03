@@ -59,8 +59,13 @@ module.exports = function(app) {
         dimension = dimension.toUpperCase().trim();
         var gen = require("random-seed");
         var fs = require("fs");
+        var path = "";
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
-            return response.render("pages/newgameultra/endings/1");
+            var files = fs.readdirSync("pages/newgameultra/endings/");
+            var rand = gen.create(dimension);
+            var n = rand(files.length);
+            path = "pages/newgameultra/endings/" + files[n];
+            return response.render(path);
         }
         response.redirect('/404');
         //res.json({script: "console.log();"})

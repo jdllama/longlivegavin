@@ -128,7 +128,7 @@ module.exports = function(app) {
             return array;
         }
         responses = shuffle(responses);
-        res.render('pages/danger', {responses: responses, isNewGameAlready: typeof request.cookies.ITS_CLYDE_TIME != "undefined"});
+        res.render('pages/danger', {responses: responses, ended: typeof request.cookies.GO_FOR_THE_GOOD_ENDING != "undefined", isNewGameAlready: typeof request.cookies.ITS_CLYDE_TIME != "undefined"});
     });
 
     app.get('/PMOSH.rar', function(request, response) {
