@@ -47,7 +47,6 @@ module.exports = function(app) {
             }
             else {
                 clearTimeout(activeAttempts[IP].handle);
-                console.log(activeAttempts[IP].attempts)
                 if(activeAttempts[IP].attempts == 1) {
                     activeAttempts[IP].attempts++;
                     return response.render("pages/newgameultra/speedypuzzle");
