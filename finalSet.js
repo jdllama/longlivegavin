@@ -62,17 +62,18 @@ module.exports = function(app) {
         var fs = require("fs");
         var path = "";
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
-            var files = fs.readdirSync("./views/pages/newgameultra/endings/");
-            
-            var rand = gen.create(dimension);
-            var n = rand(files.length);
-            console.log(dimension, files, n, files[n]);
-            path = "pages/newgameultra/endings/" + files[n];
+            if(dimension == "") {
+
+            }
+            else {
+                var files = fs.readdirSync("./views/pages/newgameultra/endings/");
+                var rand = gen.create(dimension);
+                var n = rand(files.length);
+                path = "pages/newgameultra/endings/" + files[n];
+            }
             return response.render(path);
         }
         response.redirect('/404');
-        //res.json({script: "console.log();"})
-        //res.json({script:script, idea: idea});
     });
 
     app.get('/DIRIGIBLE/MARIO', function(request, response) {
