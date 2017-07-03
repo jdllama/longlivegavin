@@ -20,12 +20,14 @@ module.exports = function(app) {
         if(!activeAttempts[IP]) {
             activeAttempts[IP] = {
                 active: true,
-                attempts: 0
+                attempts: 0,
+                handle: null
             }
         }
+        clearTimeout(activeAttempts[IP].handle);
         activeAttempts[IP].active = true;
         activeAttempts[IP].attempts++;
-        setTimeout(function() {
+        activeAttempts[IP].handle = setTimeout(function() {
              activeAttempts[IP].active = false;
         }, 1000 * 60);
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
