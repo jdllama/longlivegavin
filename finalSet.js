@@ -34,6 +34,19 @@ module.exports = function(app) {
         response.redirect('/404');
     });
 
+    app.get("/SAVELAURAANDGAVINGODDAMMIT", function(request, response) {
+        var IP = request.headers['x-forwarded-for'];
+        if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+            if(!activeAttempts[IP] || activeAttempts[IP].active == false) {
+                return response.render("pages/newgameultra/failedgame");
+            }
+            else {
+                return response.render("pages/newgameultra/stage5");
+            }
+        }
+        response.redirect('/404');
+    });
+
     app.get('/DIRIGIBLE/MARIO', function(request, response) {
         response.redirect('/MARIO');
     });
