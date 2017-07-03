@@ -38,7 +38,6 @@ module.exports = function(app) {
 
     app.get("/SAVELAURAANDGAVINGODDAMMIT", function(request, response) {
         var IP = request.headers['x-forwarded-for'];
-        console.log(__dirname);
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
             if(!activeAttempts[IP] || activeAttempts[IP].active == false) {
                 return response.render("pages/newgameultra/failedgame");
@@ -63,7 +62,7 @@ module.exports = function(app) {
         var fs = require("fs");
         var path = "";
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
-            var files = fs.readdirSync("./pages/newgameultra/endings/");
+            var files = fs.readdirSync("./views/pages/newgameultra/endings/");
             var rand = gen.create(dimension);
             var n = rand(files.length);
             path = "pages/newgameultra/endings/" + files[n];
