@@ -39,13 +39,6 @@ var solved = false;
 var boardParts;
 setBoard();
 
-document.getElementById('scale').onchange = function() {
-  tileCount = this.value;
-  tileSize = boardSize / tileCount;
-  setBoard();
-  drawTiles();
-};
-
 document.getElementById('puzzle').onclick = function(e) {
   clickLoc.x = Math.floor((e.pageX - this.offsetLeft) / tileSize);
   clickLoc.y = Math.floor((e.pageY - this.offsetTop) / tileSize);
