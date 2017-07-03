@@ -8,11 +8,11 @@
 <body>
 Are you seriously still trying to save them? After learning about their bald-faced lies?<br />
 <br />
-Fine. We'll play a game. Everyone knows this game; click a button, the buttons next to it flip. Turn off all the lights.<br />
+Fine. We'll play a game. Everyone knows this game. Slide the pieces of the picture back to where it's supposed to go.<br />
 Oh, and you have one minute.
 <br />
 <br />
-<canvas id="puzzle" width="640px" height="640px"></canvas>
+<canvas id="puzzle" title="Look at her. Even behind so much makeup, she's gorgeous." width="640px" height="640px"></canvas>
 <script>
 var context = document.getElementById('puzzle').getContext('2d');
 
@@ -21,7 +21,7 @@ img.src = 'lauraandgavin.png';
 img.addEventListener('load', drawTiles, false);
 
 var boardSize = document.getElementById('puzzle').width;
-var tileCount = 2;
+var tileCount = 6;
 //var tileCount = document.getElementById('scale').value;
 
 var tileSize = boardSize / tileCount;
