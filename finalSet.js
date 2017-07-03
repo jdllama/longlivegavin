@@ -63,8 +63,10 @@ module.exports = function(app) {
         var path = "";
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
             var files = fs.readdirSync("./views/pages/newgameultra/endings/");
+            
             var rand = gen.create(dimension);
             var n = rand(files.length);
+            console.log(dimension, files, n, files[n]);
             path = "pages/newgameultra/endings/" + files[n];
             return response.render(path);
         }
