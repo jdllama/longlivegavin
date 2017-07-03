@@ -43,6 +43,7 @@ module.exports = function(app) {
                 return response.render("pages/newgameultra/failedgame");
             }
             else {
+                clearTimeout(activeAttempts[IP].handle);
                 if(activeAttempts[IP].attempts == 1) {
                     activeAttempts[IP].attempts++;
                     return response.render("pages/newgameultra/speedypuzzle");
