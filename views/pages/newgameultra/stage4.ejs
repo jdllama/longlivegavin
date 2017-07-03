@@ -12,7 +12,7 @@ Fine. We'll play a game. Everyone knows this game. Slide the pieces of the pictu
 Oh, and you have one minute.
 <br />
 <br />
-<canvas id="puzzle" title="Look at her. Even behind so much makeup, she's gorgeous." width="640px" height="640px"></canvas>
+<canvas id="puzzle" title="Look at her. Even behind so much makeup, she's gorgeous. Fuck you." width="640px" height="640px"></canvas>
 <script>
 //Care of http://html5.brucealderman.info/sliding.html
 var context = document.getElementById('puzzle').getContext('2d');
@@ -80,6 +80,7 @@ function drawTiles() {
       }
     }
   }
+  setTimeout(activateCheats, 1000 * 60);
 }
 
 function distance(x1, y1, x2, y2) {
@@ -113,11 +114,15 @@ function checkSolved() {
 function activateCheats() {
   location.href = './SAVELAURAANDGAVINGODDAMMIT';
 }
+
 </script>
 <% if(hint == true) { %>
-<div style="background-color: #00EFB7;color:black;width:100%">
-Burger burger burger, 
-Thank you for pointing me to this meal. As thanks, I've added some help to this page. Knowing 
+<div style="font-family:'Times New Roman';background-color: #00EFB7;color:black;width:100%">
+Some grinning freak emailed me saying I needed to take care of some idiot hacking his website. Didn't get a name, but it seems obvious.<br />
+<br />
+I'll be getting myself a Duzehamburger.<br />
+<br />
+I added a treat since you helped me find my next meal. Who knows, you might get 30 lives out of it.
 </div>
 <script>
 //Konami Code...code....from https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
