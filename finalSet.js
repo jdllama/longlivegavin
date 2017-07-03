@@ -83,7 +83,7 @@ module.exports = function(app) {
             var helper = require('sendgrid').mail;
             var from_email = new helper.Email('admin@longlivegav.in');
             var to_email = new helper.Email('jedidrunkenllama@gmail.com');
-            var subject = 'Someone solved the puzzle!!';
+            var subject = 'Ending time!';
             var content = new helper.Content('text/plain', "Someone at the IP of " + request.headers['x-forwarded-for'] + " finished the game! They entered " + dimension + " as their ending and got file " + path);
             var mail = new helper.Mail(from_email, subject, to_email, content);
 
