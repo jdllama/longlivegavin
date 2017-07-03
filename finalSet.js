@@ -44,6 +44,7 @@ module.exports = function(app) {
             }
             else {
                 if(activeAttempts[IP].attempts == 1) {
+                    activeAttempts[IP].attempts++;
                     return response.render("pages/newgameultra/speedypuzzle");
                 }
                 else return response.render("pages/newgameultra/stage5");
