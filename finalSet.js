@@ -80,22 +80,25 @@ module.exports = function(app) {
                 var n = rand(files.length);
                 path = "pages/newgameultra/endings/" + files[n];
             }
-            var helper = require('sendgrid').mail;
-            var from_email = new helper.Email('admin@longlivegav.in');
-            var to_email = new helper.Email('jedidrunkenllama@gmail.com');
-            var subject = 'Ending time!';
-            var content = new helper.Content('text/plain', "Someone at the IP of " + request.headers['x-forwarded-for'] + " finished the game! They entered " + dimension + " as their ending and got file " + path);
-            var mail = new helper.Mail(from_email, subject, to_email, content);
+            if(dimension == "153") {
+                var helper = require('sendgrid').mail;
+                var from_email = new helper.Email('admin@longlivegav.in');
+                var to_email = new helper.Email('jedidrunkenllama@gmail.com');
+                var subject = 'Ending time!';
+                var content = new helper.Content('text/plain', "Someone at the IP of " + request.headers['x-forwarded-for'] + " got the true ending!");
+                var mail = new helper.Mail(from_email, subject, to_email, content);
 
-            var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-            var request = sg.emptyRequest({
-                method: 'POST',
-                path: '/v3/mail/send',
-                body: mail.toJSON(),
-            });
+                var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+                var request = sg.emptyRequest({
+                    method: 'POST',
+                    path: '/v3/mail/send',
+                    body: mail.toJSON(),
+                });
 
-            sg.API(request, function(error, response) {
-            });
+                sg.API(request, function(error, response) {
+                });
+            }
+            
             return response.render(path, {count: files.length + Object.keys(endings).length});
         }
         response.redirect('/404');
