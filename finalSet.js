@@ -43,7 +43,10 @@ module.exports = function(app) {
                 return response.render("pages/newgameultra/failedgame");
             }
             else {
-                return response.render("pages/newgameultra/stage5");
+                if(activeAttempts[IP].attempts == 1) {
+                    return response.render("pages/newgameultra/speedypuzzle");
+                }
+                else return response.render("pages/newgameultra/stage5");
             }
         }
         response.redirect('/404');
