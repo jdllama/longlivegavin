@@ -57,7 +57,7 @@ var gamenumber=0;
 var number_of_rows=25;//y
 var number_of_columns=25;//x
 var number_of_states=2;// first two states are 0 and 1 
-var random_steps=70;
+var random_steps=0;
 var game_initialisation=true;
 
 var done_steps=0;
@@ -79,9 +79,13 @@ aColors[1]='yellow';
 
 function onSelect(x,y) {
 	done_steps++;
+    /*
 	flip (x-1,y-1);flip (x-1,y);flip (x-1,y+1);
 	flip (x,y-1);flip (x,y);flip (x,y+1);
 	flip (x+1,y-1);flip (x+1,y);flip (x+1,y+1);
+    */
+    flip(x,y);
+    console.log(aField);
 	if (solved()) {
         activateCheats();
     }//alert("Congratulation! You have solved the puzzle in "+done_steps+" steps.");
