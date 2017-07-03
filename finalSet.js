@@ -61,9 +61,15 @@ module.exports = function(app) {
         var gen = require("random-seed");
         var fs = require("fs");
         var path = "";
+        var endings = {
+            "33": "firstending",
+            "54": "secondending",
+            "66": "secondending",
+            "153": "secondending",
+        }
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
-            if(dimension == "") {
-
+            if(endings[dimension]) {
+                path = "pages/newgameultra/" + endings[dimension];
             }
             else {
                 var files = fs.readdirSync("./views/pages/newgameultra/endings/");
