@@ -69,18 +69,18 @@ module.exports = function(app) {
             "54": "secondending",
             "66": "thirdending",
             "153": "trueending",
-        }
+        };
+        var files = fs.readdirSync("./views/pages/newgameultra/endings/");
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
             if(endings[dimension]) {
                 path = "pages/newgameultra/" + endings[dimension];
             }
             else {
-                var files = fs.readdirSync("./views/pages/newgameultra/endings/");
                 var rand = gen.create(dimension);
                 var n = rand(files.length);
                 path = "pages/newgameultra/endings/" + files[n];
             }
-            return response.render(path);
+            return response.render(path, {count: files.length + Object.keys(endings).length});
         }
         response.redirect('/404');
     });
