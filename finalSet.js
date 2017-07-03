@@ -23,6 +23,7 @@ module.exports = function(app) {
                 attempts: 0
             }
         }
+        activeAttempts[IP].active = true;
         activeAttempts[IP].attempts++;
         setTimeout(function() {
              activeAttempts[IP].active = false;
