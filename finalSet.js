@@ -53,6 +53,20 @@ module.exports = function(app) {
         response.redirect('/404');
     });
 
+    app.post("/SAVELAURAANDGAVINGODDAMMIT", function(request, response) {
+        var dimension = request.body.dimension;
+        if(!dimension) dimension = "";
+        dimension = dimension.toUpperCase().trim();
+        var gen = require("random-seed");
+        var fs = require("fs");
+        if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
+            return response.render("pages/newgameultra/endings/1");
+        }
+        response.redirect('/404');
+        //res.json({script: "console.log();"})
+        //res.json({script:script, idea: idea});
+    });
+
     app.get('/DIRIGIBLE/MARIO', function(request, response) {
         response.redirect('/MARIO');
     });

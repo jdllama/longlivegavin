@@ -16,6 +16,7 @@
     "express": "4.15.2",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
+    "random-seed": "^0.3.0",
     "sendgrid": "^5.1.1"
   },
   "repository": {
