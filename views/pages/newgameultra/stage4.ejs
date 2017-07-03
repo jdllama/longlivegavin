@@ -6,6 +6,10 @@
 <% include ../../partials/angela.ejs %>
 </head>
 <body onload="initgame()">
+Are you seriously still trying to save them? After learning about their bald-faced lies?<br />
+<br />
+Fine. We'll play a game. Everyone knows this game; click a button, the buttons next to it flip. Turn off all the lights.<br />
+Oh, and you have one minute.
 <script>
 //Konami Code...code....from https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
 
@@ -64,7 +68,7 @@ var done_steps=0;
 var aColors = new Array( number_of_states);
 var aField = <%-arr;%>; //new Array( number_of_columns+1);
 var copyright=2014
-/*
+
 for (x = 0; x < number_of_columns+1; ++x) {
   	aField[x] = new Array( number_of_rows+1);
 	for ( y = 0; y < number_of_rows+1; ++y) {
@@ -72,7 +76,7 @@ for (x = 0; x < number_of_columns+1; ++x) {
 	}
 }
 
-*/
+
 aColors[0]='black';
 aColors[1]='yellow';
 
