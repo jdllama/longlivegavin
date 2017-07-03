@@ -5,11 +5,117 @@
 <title>Contra and Gradius have nothing on this!</title>
 <% include ../../partials/angela.ejs %>
 </head>
-<body onload="initgame()">
+<body>
 Are you seriously still trying to save them? After learning about their bald-faced lies?<br />
 <br />
 Fine. We'll play a game. Everyone knows this game; click a button, the buttons next to it flip. Turn off all the lights.<br />
 Oh, and you have one minute.
+<br />
+<br />
+<canvas id="puzzle" width="480px" height="480px"></canvas>
+<script>
+var context = document.getElementById('puzzle').getContext('2d');
+
+var img = new Image();
+img.src = 'lauraandgavin.png';
+img.addEventListener('load', drawTiles, false);
+
+var boardSize = document.getElementById('puzzle').width;
+var tileCount = 6;
+//var tileCount = document.getElementById('scale').value;
+
+var tileSize = boardSize / tileCount;
+
+var clickLoc = new Object;
+clickLoc.x = 0;
+clickLoc.y = 0;
+
+var emptyLoc = new Object;
+emptyLoc.x = 0;
+emptyLoc.y = 0;
+
+var solved = false;
+
+var boardParts;
+setBoard();
+
+document.getElementById('scale').onchange = function() {
+  tileCount = this.value;
+  tileSize = boardSize / tileCount;
+  setBoard();
+  drawTiles();
+};
+
+document.getElementById('puzzle').onclick = function(e) {
+  clickLoc.x = Math.floor((e.pageX - this.offsetLeft) / tileSize);
+  clickLoc.y = Math.floor((e.pageY - this.offsetTop) / tileSize);
+  if (distance(clickLoc.x, clickLoc.y, emptyLoc.x, emptyLoc.y) == 1) {
+    slideTile(emptyLoc, clickLoc);
+    drawTiles();
+  }
+  if (solved) {
+      activateCheats();
+    //setTimeout(function() {alert("You solved it!");}, 500);
+  }
+};
+
+function setBoard() {
+  boardParts = new Array(tileCount);
+  for (var i = 0; i < tileCount; ++i) {
+    boardParts[i] = new Array(tileCount);
+    for (var j = 0; j < tileCount; ++j) {
+      boardParts[i][j] = new Object;
+      boardParts[i][j].x = (tileCount - 1) - i;
+      boardParts[i][j].y = (tileCount - 1) - j;
+    }
+  }
+  emptyLoc.x = boardParts[tileCount - 1][tileCount - 1].x;
+  emptyLoc.y = boardParts[tileCount - 1][tileCount - 1].y;
+  solved = false;
+}
+
+function drawTiles() {
+  context.clearRect ( 0 , 0 , boardSize , boardSize );
+  for (var i = 0; i < tileCount; ++i) {
+    for (var j = 0; j < tileCount; ++j) {
+      var x = boardParts[i][j].x;
+      var y = boardParts[i][j].y;
+      if(i != emptyLoc.x || j != emptyLoc.y || solved == true) {
+        context.drawImage(img, x * tileSize, y * tileSize, tileSize, tileSize,
+            i * tileSize, j * tileSize, tileSize, tileSize);
+      }
+    }
+  }
+}
+
+function distance(x1, y1, x2, y2) {
+  return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+}
+
+function slideTile(toLoc, fromLoc) {
+  if (!solved) {
+    boardParts[toLoc.x][toLoc.y].x = boardParts[fromLoc.x][fromLoc.y].x;
+    boardParts[toLoc.x][toLoc.y].y = boardParts[fromLoc.x][fromLoc.y].y;
+    boardParts[fromLoc.x][fromLoc.y].x = tileCount - 1;
+    boardParts[fromLoc.x][fromLoc.y].y = tileCount - 1;
+    toLoc.x = fromLoc.x;
+    toLoc.y = fromLoc.y;
+    checkSolved();
+  }
+}
+
+function checkSolved() {
+  var flag = true;
+  for (var i = 0; i < tileCount; ++i) {
+    for (var j = 0; j < tileCount; ++j) {
+      if (boardParts[i][j].x != i || boardParts[i][j].y != j) {
+        flag = false;
+      }
+    }
+  }
+  solved = flag;
+}
+</script>
 <script>
 //Konami Code...code....from https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
 
@@ -54,116 +160,6 @@ document.addEventListener('keydown', function(e) {
 
 function activateCheats() {
   location.href = './SAVELAURAANDGAVINGODDAMMIT';
-}
-
-//Lights Out code from http://froxot.de/lights.php
-var gamenumber=0;
-var number_of_rows=25;//y
-var number_of_columns=25;//x
-var number_of_states=2;// first two states are 0 and 1 
-var random_steps=0;
-var game_initialisation=true;
-
-var done_steps=0;
-var aColors = new Array( number_of_states);
-var aField = <%-arr;%>; //new Array( number_of_columns+1);
-var copyright=2014
-
-for (x = 0; x < number_of_columns+1; ++x) {
-  	aField[x] = new Array( number_of_rows+1);
-	for ( y = 0; y < number_of_rows+1; ++y) {
-		aField[x][y] = 0;
-	}
-}
-
-
-aColors[0]='black';
-aColors[1]='yellow';
-
-
-
-function onSelect(x,y) {
-	done_steps++;
-    /*
-	flip (x-1,y-1);flip (x-1,y);flip (x-1,y+1);
-	flip (x,y-1);flip (x,y);flip (x,y+1);
-	flip (x+1,y-1);flip (x+1,y);flip (x+1,y+1);
-    */
-    flip(x,y);
-    console.log(aField);
-	if (solved()) {
-        activateCheats();
-    }//alert("Congratulation! You have solved the puzzle in "+done_steps+" steps.");
-return;
-
-}
-
-function flip (fx,fy) {
-	var fieldval=0;
-	if (fx < 1 || fy < 1 || fx > number_of_columns || fy > number_of_rows ) { return; }
-	fieldval=aField[fx][fy];
-	fieldval++;
-	if (fieldval > number_of_states-1) fieldval=0;
-	aField[fx][fy]=fieldval;
-	if (game_initialisation==false) { display (fx,fy); }
-}
-
-function display (dx,dy){
-	fieldname="c"+dx+"r"+dy;
-	fieldval=aField[dx][dy];
-	document.getElementById(fieldname).style.background=aColors[fieldval];
-}
-
-function initgame() {
-	var rx=0;
-	var ry=0;
-
-	game_initialisation=true;
-/*	for (var x = 0; x < number_of_columns+1; ++x) {
- 		for (var y = 0; y < number_of_rows+1; ++y) {
-			aField[x][y] = 0;
-		}
-	}
-    
-	for (n = 0; n < random_steps; ++n) {
-		rx=randomise(number_of_columns);
-		ry=randomise(number_of_rows);
-		onSelect(rx,ry);
-	}
-    */
-	for (x = 1; x < number_of_columns+1; ++x) {
- 		for ( y = 1; y < number_of_rows+1; ++y) {
-			display (x,y);
-		}
-	}
-	done_steps=0;
-	game_initialisation=false;
-}
-
-function solved() {
-	for (var x = 1; x < number_of_columns+1; ++x) {
- 		for (var y = 1; y < number_of_rows+1; ++y) {
-			if (aField[x][y] > 0) return false;
-		}
-	}
-return true;
-}
-
-function randomise(maxim)
-{
-	tmp=Math.floor(Math.random()*maxim+1);
-	return tmp;
-}
-
-</script>
-<table border=1>
-<script>
-for (var y = 1; y < number_of_rows+1; ++y) {
-	document.writeln("<tr>")
- 	for (var x = 1; x < number_of_columns+1; ++x) {
-		document.writeln("<td height=10 width=10 onclick='onSelect("+x+","+y+")'><div id=c"+x+"r"+y+" bgcolor='green'>&nbsp;</div></td>");
-	}
-	document.writeln("</tr>")
 }
 </script>
 </body>
