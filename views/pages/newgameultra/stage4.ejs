@@ -62,7 +62,7 @@ var game_initialisation=true;
 
 var done_steps=0;
 var aColors = new Array( number_of_states);
-var aField = new Array( number_of_columns+1);
+var aField = <%-arr;%>; //new Array( number_of_columns+1);
 var copyright=2014
 for (x = 0; x < number_of_columns+1; ++x) {
   	aField[x] = new Array( number_of_rows+1);
