@@ -38,6 +38,7 @@ module.exports = function(app) {
 
     app.get("/SAVELAURAANDGAVINGODDAMMIT", function(request, response) {
         var IP = request.headers['x-forwarded-for'];
+        console.log(__dirname);
         if(request.cookies.GO_FOR_THE_GOOD_ENDING) {
             if(!activeAttempts[IP] || activeAttempts[IP].active == false) {
                 return response.render("pages/newgameultra/failedgame");
