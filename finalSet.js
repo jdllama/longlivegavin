@@ -68,6 +68,9 @@ module.exports = function(app) {
             "33": "firstending",
             "54": "secondending",
             "66": "thirdending",
+            "87": "1and2",
+            "99": "1and3",
+            "120": "2and3",
             "153": "trueending",
         };
         var files = fs.readdirSync("./views/pages/newgameultra/endings/");
